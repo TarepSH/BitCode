@@ -17,6 +17,9 @@
 /tmp
 
 
-# sublime files
+# Sublime Porject Files
 *.sublime-project
 *.sublime-workspace
+
+# Attachments files
+public/system/*
