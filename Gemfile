@@ -46,5 +46,8 @@ end
 group :development do
   # Open letter instead of send them
   gem 'letter_opener'
+
+  # Footernotes to show DB queries and time page get to load
+  gem 'rails-footnotes', '~> 4.0'
 end
 
