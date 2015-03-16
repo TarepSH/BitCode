@@ -37,6 +37,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "rails_admin"
 # Devise gem for user managment
 gem 'devise'
+# paperclip gem to add attachments to models
+gem "paperclip", "~> 4.2"
+# cancan gem for auth Authorization
+gem "cancan"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
