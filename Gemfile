@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  # Open letter instead of send them
+  gem 'letter_opener'
+end
+
