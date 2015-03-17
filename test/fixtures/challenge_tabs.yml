@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  language_name: MyString
+  starter_code: MyText
+  challenge_id: 1
+
+two:
+  name: MyString
+  language_name: MyString
+  starter_code: MyText
+  challenge_id: 1

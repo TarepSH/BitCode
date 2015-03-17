@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317123750) do
+ActiveRecord::Schema.define(version: 20150317141822) do
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture_file_name"
+    t.integer  "picture_file_size"
+    t.string   "picture_content_type"
+    t.datetime "picture_updated_at"
+    t.integer  "chapter_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "badges_users", id: false, force: :cascade do |t|
+    t.integer  "badge_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "challenge_steps", force: :cascade do |t|
+    t.string   "step_text"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "challenge_tabs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language_name"
+    t.text     "starter_code"
+    t.integer  "challenge_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "challenges", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +84,15 @@ ActiveRecord::Schema.define(version: 20150317123750) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "hints", force: :cascade do |t|
+    t.string   "title"
+    t.text     "desc"
+    t.integer  "points"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "user_solutions", force: :cascade do |t|
