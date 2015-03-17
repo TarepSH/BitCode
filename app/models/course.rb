@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
   has_attached_file :logo, :styles => { :medium => "300x300#", :thumb => "100x100#" }
 
-
+  # Validates
   validates :name, :presence => true
   validates :desc, :presence => true
 
@@ -22,6 +22,9 @@ class Course < ActiveRecord::Base
     }
 
   validate :logo_dimensions
+
+  # Relations
+  has_many :chapters
 
   private
 

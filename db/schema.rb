@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316160100) do
+ActiveRecord::Schema.define(version: 20150317093045) do
+
+  create_table "chapters", force: :cascade do |t|
+    t.string   "title"
+    t.text     "desc"
+    t.string   "video_file_name"
+    t.integer  "video_file_size"
+    t.string   "video_content_type"
+    t.datetime "video_updated_at"
+    t.integer  "course_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"

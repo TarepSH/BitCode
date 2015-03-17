@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chapters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Video</th>
+      <th>Course</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.title %></td>
+        <td><%= chapter.desc %></td>
+        <video width="320" height="240" controls>
+          <source src="<%= chapter.video.url %>" type="video/mp4">
+          <source src="<%= chapter.video.url %>" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+        <td><%= chapter.course_id %></td>
+        <td><%= link_to 'Show', course_chapter_path(chapter.course, chapter) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :courses, only: [:index, :show]
+  resources :courses, only: [:index, :show] do
+    resources :chapters, only: [:index, :show]
+  end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
