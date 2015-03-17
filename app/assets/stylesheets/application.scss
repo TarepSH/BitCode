@@ -17,8 +17,18 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/earlyaccess/notokufiarabic.css);
 
-/* navbar colering */
+body p {
+  font-family: 'Noto Kufi Arabic', serif;
+  }
+
+  a {
+    font-family: 'Noto Kufi Arabic', serif;
+
+  }
+
+/* navbar colering
 .navbar-default {
   background-color: #1695a3;
   border-color: #225378;
@@ -91,4 +101,4 @@
     color: #ecdbff;
     background-color: #225378;
   }
-}
+}  */
