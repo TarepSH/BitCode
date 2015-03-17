@@ -6,4 +6,9 @@ class ChallengeTab < ActiveRecord::Base
 
   # Relations
   belongs_to :challenge
+
+  # RailsAdmin
+  rails_admin do
+    visible false
+  end
 end
