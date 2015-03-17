@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true
   validates :name, :presence => true
-  validates :email, :presence => true, :email => true
+  validates :email, :presence => true
   #validates :score, :presence => true
 
   has_and_belongs_to_many :courses
