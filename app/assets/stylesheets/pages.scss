@@ -1,3 +1,32 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar{
+  margin-bottom: -20px !important;
+  }
+
+.home-cover {
+  text-align: center;
+  padding-top: 150px;
+  min-height: 550px;
+  background-color: #1695a3;
+}
+
+.home-cover h2 {
+  line-height: 1.5;
+  direction: rtl;
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+}
+
+.home-cover a{
+  color: white;
+}
+
+.home-cover a:visited {
+  color: white;
+}
+
+
