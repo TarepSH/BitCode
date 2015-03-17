@@ -1,5 +1,6 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
+  //background-color: #1695a3;
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
@@ -11,7 +12,11 @@
   text-align: center;
   padding-top: 150px;
   min-height: 550px;
-  background-color: #1695a3;
+
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/assets/background.jpg");
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 .home-cover h2 {
