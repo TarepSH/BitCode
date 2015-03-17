@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @challenge.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @challenge.desc %>
+</p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @challenge.chapter_id %>
+</p>
+
+<%= link_to 'Back', course_chapter_challenges_path(params[:course_id], params[:chapter_id]) %>

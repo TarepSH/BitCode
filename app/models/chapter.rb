@@ -18,4 +18,5 @@ class Chapter < ActiveRecord::Base
 
   # Relations
   belongs_to :course
+  has_many :challenges
 end

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :courses, only: [:index, :show] do
-    resources :chapters, only: [:index, :show]
+    resources :chapters, only: [:index, :show] do
+      resources :challenges, only: [:index, :show]
+    end
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
