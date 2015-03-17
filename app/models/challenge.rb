@@ -7,5 +7,6 @@ class Challenge < ActiveRecord::Base
 
   # Relations
   belongs_to :chapter
+  has_many :challenge_tabs
   has_many :user_solutions
 end

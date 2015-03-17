@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317123750) do
+ActiveRecord::Schema.define(version: 20150317124254) do
+
+  create_table "challenge_tabs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language_name"
+    t.text     "starter_code"
+    t.integer  "challenge_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "challenges", force: :cascade do |t|
     t.string   "name"
