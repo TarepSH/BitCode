@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317123156) do
+ActiveRecord::Schema.define(version: 20150317123750) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150317123156) do
     t.integer  "chapter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "points"
   end
 
   create_table "chapters", force: :cascade do |t|
