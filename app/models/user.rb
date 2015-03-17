@@ -9,8 +9,11 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
   #validates :score, :presence => true
 
+  # Relations
+  has_many :user_solutions
   has_and_belongs_to_many :courses
 
+  # Methods
   def admin?
     self.role == "admin"
   end
