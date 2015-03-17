@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317133128) do
+ActiveRecord::Schema.define(version: 20150317134052) do
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture_file_name"
+    t.integer  "picture_file_size"
+    t.string   "picture_content_type"
+    t.datetime "picture_updated_at"
+    t.integer  "chapter_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "challenge_steps", force: :cascade do |t|
     t.string   "step_text"
