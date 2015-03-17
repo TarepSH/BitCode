@@ -8,6 +8,7 @@ class Challenge < ActiveRecord::Base
   # Relations
   belongs_to :chapter
   has_many :challenge_tabs
+  has_many :challenge_steps
   has_many :hints
   has_many :user_solutions
 
@@ -31,6 +32,9 @@ class Challenge < ActiveRecord::Base
         group :default
       end
       field :challenge_tabs do
+        orderable true
+      end
+      field :challenge_steps do
         orderable true
       end
       field :hints do
