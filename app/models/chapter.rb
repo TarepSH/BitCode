@@ -18,6 +18,7 @@ class Chapter < ActiveRecord::Base
 
   # Relations
   belongs_to :course
+<<<<<<< HEAD
   has_many :challenges
   has_many :badges
 
@@ -25,4 +26,19 @@ class Chapter < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+=======
+  has_many :challenges, :dependent => :destroy
+  has_many :badges, :dependent => :destroy
+
+  # RailsAdmin
+  rails_admin do
+    list do
+      field :id
+      field :title
+      field :desc
+      field :video
+      field :course
+    end
+  end
+>>>>>>> 49f7b74d04c9361c173f8d461bcf27e2c3eacba0
 end

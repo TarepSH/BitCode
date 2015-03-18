@@ -22,4 +22,15 @@ class User < ActiveRecord::Base
   def user?
     self.role == "user"
   end
+
+  # RailsAdmin
+  rails_admin do
+    list do
+      field :id
+      field :name
+      field :username
+      field :email
+      field :role
+    end
+  end
 end

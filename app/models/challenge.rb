@@ -7,13 +7,20 @@ class Challenge < ActiveRecord::Base
 
   # Relations
   belongs_to :chapter
-  has_many :challenge_tabs
+  has_many :challenge_tabs, :dependent => :destroy
   has_many :challenge_steps
-  has_many :hints
-  has_many :user_solutions
+  has_many :hints, :dependent => :destroy
+  has_many :user_solutions, :dependent => :destroy
 
   # RailsAdmin
   rails_admin do
+    list do
+      field :id
+      field :name
+      field :desc
+      field :points
+      field :chapter
+    end
     edit do
       field :name do
         label "Name"

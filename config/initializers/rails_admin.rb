@@ -19,12 +19,18 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
+    new do
+      except ['UserSolution']
+    end
     export
     bulk_delete
     show
-    edit
-    delete
+    edit do
+      except ['UserSolution']
+    end
+    delete do
+      except ['UserSolution']
+    end
     show_in_app
 
     ## With an audit adapter, you can add:
