@@ -25,13 +25,21 @@
 }
 </div>
 
+<div id="view2">
+  <iframe id="frame" sandbox ></iframe>
+</div>
+
 <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/vibrant_ink");
   editor.getSession().setMode("ace/mode/html");
-</script>
-
+  document.getElementById('editor').style.fontSize='17px';
+  editor.getSession().on('change', function(e) {
+    var code = editor.getValue();
+    $("#frame").attr("srcdoc", code);
+  });
+      </script>
 </div>
 
 <%= link_to 'Back', course_chapter_challenges_path(params[:course_id], params[:chapter_id]) %>
