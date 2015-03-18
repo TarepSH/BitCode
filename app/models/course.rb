@@ -35,4 +35,9 @@ class Course < ActiveRecord::Base
 
     errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
   end
+
+  #frindly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end
