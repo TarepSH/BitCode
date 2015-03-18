@@ -31,4 +31,9 @@ class Chapter < ActiveRecord::Base
       field :course
     end
   end
+
+  #frindly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end

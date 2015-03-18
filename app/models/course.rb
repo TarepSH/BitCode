@@ -45,6 +45,12 @@ class Course < ActiveRecord::Base
       required_height = 600
       dimensions = Paperclip::Geometry.from_file(logo.queued_for_write[:original].path)
 
-      errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
-    end
+ HEAD
+    errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
+  end
+
+  #frindly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end
