@@ -20,4 +20,9 @@ class Chapter < ActiveRecord::Base
   belongs_to :course
   has_many :challenges
   has_many :badges
+
+  #frindly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end
