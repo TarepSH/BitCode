@@ -45,6 +45,9 @@ gem "cancan"
 # Bootstarp gem to adding style for app
 gem 'bootstrap-sass'
 
+#frindly_id gem
+gem 'friendly_id'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

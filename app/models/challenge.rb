@@ -20,6 +20,7 @@ class Challenge < ActiveRecord::Base
       field :desc
       field :points
       field :chapter
+
     end
     edit do
       field :name do
@@ -47,6 +48,15 @@ class Challenge < ActiveRecord::Base
       field :hints do
         orderable true
       end
+
+      field :slug do
+        label:"URL"
+      end
     end
   end
+
+  #frindly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end
