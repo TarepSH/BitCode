@@ -24,15 +24,25 @@ class Course < ActiveRecord::Base
   validate :logo_dimensions
 
   # Relations
-  has_many :chapters
+  has_many :chapters, :dependent => :destroy
+
+  # RailsAdmin
+  rails_admin do
+    list do
+      field :id
+      field :name
+      field :desc
+      field :logo
+    end
+  end
 
   private
 
-  def logo_dimensions
-    required_width  = 600
-    required_height = 600
-    dimensions = Paperclip::Geometry.from_file(logo.queued_for_write[:original].path)
+    def logo_dimensions
+      required_width  = 600
+      required_height = 600
+      dimensions = Paperclip::Geometry.from_file(logo.queued_for_write[:original].path)
 
-    errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
-  end
+      errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
+    end
 end

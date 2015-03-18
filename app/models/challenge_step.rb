@@ -8,6 +8,10 @@ class ChallengeStep < ActiveRecord::Base
 
   # RailsAdmin
   rails_admin do
-    visible false
+    list do
+      field :id
+      field :step_text
+      field :challenge
+    end
   end
 end

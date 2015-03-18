@@ -18,6 +18,17 @@ class Chapter < ActiveRecord::Base
 
   # Relations
   belongs_to :course
-  has_many :challenges
-  has_many :badges
+  has_many :challenges, :dependent => :destroy
+  has_many :badges, :dependent => :destroy
+
+  # RailsAdmin
+  rails_admin do
+    list do
+      field :id
+      field :title
+      field :desc
+      field :video
+      field :course
+    end
+  end
 end

@@ -25,6 +25,16 @@ class Badge < ActiveRecord::Base
   # Relations
   belongs_to :chapter
 
+  # RailsAdmin
+  rails_admin do
+    list do
+      field :id
+      field :name
+      field :picture
+      field :chapter
+    end
+  end
+
   private
 
     def picture_dimensions
