@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317141822) do
+ActiveRecord::Schema.define(version: 20150318130212) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -75,8 +75,10 @@ ActiveRecord::Schema.define(version: 20150317141822) do
     t.integer  "logo_file_size"
     t.string   "logo_content_type"
     t.datetime "logo_updated_at"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "published",         default: false
+    t.boolean  "coming_soon",       default: true
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
