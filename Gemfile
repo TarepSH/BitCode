@@ -45,8 +45,11 @@ gem "cancan"
 # Bootstarp gem to adding style for app
 gem 'bootstrap-sass'
 
-#frindly_id gem
+# frindly_id gem to add friendly id for models
 gem 'friendly_id'
+
+# Nokogiri gem to search into HTML
+gem 'nokogiri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
