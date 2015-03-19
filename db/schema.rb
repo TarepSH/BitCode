@@ -83,9 +83,9 @@ ActiveRecord::Schema.define(version: 20150318131536) do
     t.datetime "logo_updated_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.string   "slug"
     t.boolean  "published",         default: false
     t.boolean  "coming_soon",       default: true
+    t.string   "slug"
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug"

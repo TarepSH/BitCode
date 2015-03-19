@@ -14,9 +14,6 @@
  *= require_self
  */
 
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import url(http://fonts.googleapis.com/earlyaccess/notokufiarabic.css);
 
 body p {
