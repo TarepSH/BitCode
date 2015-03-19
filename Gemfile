@@ -43,7 +43,7 @@ gem "paperclip", "~> 4.2"
 gem "cancan"
 
 # Bootstarp gem to adding style for app
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 # frindly_id gem to add friendly id for models
 gem 'friendly_id'
