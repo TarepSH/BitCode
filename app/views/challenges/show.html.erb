@@ -25,7 +25,7 @@
   <iframe id="frame" srcdoc="<h4>Hello, World!</h4>" sandbox ></iframe>
 </div>
 
-<%= form_for :challenges, name:"form" do |f| %>
+<%= form_for :challenges, remote:true, html: {id: "formcode2"}  do |f| %>
   <p>
     <%= hidden_field_tag :text  %>
   </p>
@@ -34,7 +34,6 @@
     <%= f.submit "إرسال"%>
   </p>
 <% end %>
-
 
 <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
