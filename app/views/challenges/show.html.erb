@@ -23,18 +23,18 @@
 
 <div id="view2">
   <iframe id="frame" srcdoc="<h4>Hello, World!</h4>" sandbox ></iframe>
-  <input value="Submit" type="submit" onclick="tab-link-register-login a">
 </div>
 
-<script charset="utf-8">
-$(".tab-link-register-login a").click(function(e) {
-  var src = "/static/goal/html/login.html";
-  $.modal('<iframe id="frame" srcdoc="<h4>Hello, World!</h4>" sandbox >', {
-  })
-  e.stopPropagation();
-  return false;
-});
-</script>
+<%= form_for :challenges, name:"form" do |f| %>
+  <p>
+    <%= hidden_field_tag :text  %>
+  </p>
+
+  <p>
+    <%= f.submit "إرسال"%>
+  </p>
+<% end %>
+
 
 <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
@@ -42,12 +42,16 @@ $(".tab-link-register-login a").click(function(e) {
   editor.setValue("<h4>Hello, World!</h4>");
   editor.setTheme("ace/theme/vibrant_ink");
   editor.getSession().setMode("ace/mode/html");
-  document.getElementById('editor').style.fontSize='17px';
+  document.getElementById('text').value = "<h4>Hello, World!</h4>";
   editor.getSession().on('change', function(e) {
     var code = editor.getValue();
     $("#frame").attr("srcdoc", code);
+    document.getElementById('text').value = code;
+
   });
       </script>
 </div>
+<script charset="utf-8">
+</script>
 
 <%= link_to 'Back', course_chapter_challenges_path(params[:course_id], params[:chapter_id]) %>
