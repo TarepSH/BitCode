@@ -22,8 +22,122 @@ body p {
 
   a {
     font-family: 'Noto Kufi Arabic', serif;
+  }
+
+  .navbar-default{
+    background-image: url(/assets/background.jpg);
+    background-repeat: repeat-x;
+    border-radius: 0px;
 
   }
+
+
+  .navbar-brand img {
+    margin-top: -35px;
+    margin-right: 20px;
+  }
+
+  .navbar .nav > li:first-child > a, .navbar .nav > li:first-child > a:hover, .navbar .nav > li:first-child > a:focus
+  {
+    background: transparent;
+    margin-top: -10px;
+  }
+
+  .navbar-default {
+      border-color: transparent;
+      padding-top: 20px;
+      color: #FFFFFF;
+  }
+
+.navbar-default .navbar-brand {
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+
+}
+.navbar-default .navbar-text {
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+  margin-top: 6px;
+
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+  margin-top: -10px;
+
+
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background: transparent;
+  }
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #FFFFFF;
+  border:2px;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ecdbff;
+  background: transparent;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background: transparent;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #FFFFFF;
+  background: transparent;
+  }
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #FFFFFF;
+  background: transparent;
+  }
+.navbar-default .navbar-toggle {
+  border-color: #FFFFFF;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: transparent;
+  }
+.navbar-default .navbar-toggle .icon-bar {
+  background: transparent;
+  }
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #FFFFFF;
+}
+.navbar-default .navbar-link {
+  color: #FFFFFF;
+}
+.navbar-default .navbar-link:hover {
+  color: #ecdbff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFFFFF;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #FFFFFF;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #FFFFFF;
+    background: transparent;
+  }
+}
+
+.signup-navbar {
+  border: 1px solid;
+  border-radius: 4px;
+}
 
 
 /* navbar colering
