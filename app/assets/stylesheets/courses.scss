@@ -1,3 +1,15 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.course-header {
+  text-align: center;
+  padding-top: 150px;
+  min-height: 500px;
+  margin-top: -100px;
+  line-height: 1.5;
+  direction: rtl;
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
+}

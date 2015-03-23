@@ -1,18 +1,24 @@
+<style media="screen">
+  .course-header {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(<%= @course.logo.url %>);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:  50% 30%;
+
+  }
+</style>
+
+<div class=course-header>
+  <div class="container">
+    <div class="col-sm-12">
+      <h2>  <%= @course.name %> <h2>
+      <h4>  <%= @course.desc %> </h4>
+    </div>
+  </div>
+</div>
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
   <%= @course.desc %>
-</p>
-
-<p>
-  <strong>Logo</strong>
-  <%= image_tag @course.logo.url %>
 </p>
 
 <%= link_to 'Back', courses_path %>

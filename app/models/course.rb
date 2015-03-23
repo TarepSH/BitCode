@@ -7,7 +7,7 @@ class Course < ActiveRecord::Base
 
   validates :logo, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :logo
-  validates_with AttachmentSizeValidator, :attributes => :logo, :less_than => 1.megabytes
+  validates_with AttachmentSizeValidator, :attributes => :logo, :less_than => 2.megabytes
 
   validates_attachment :logo, :presence => true,
     :content_type => {
@@ -18,7 +18,7 @@ class Course < ActiveRecord::Base
       ]
     },
     :size => {
-      :less_than => 1.megabytes
+      :less_than => 2.megabytes
     }
 
   validate :logo_dimensions
@@ -41,11 +41,11 @@ class Course < ActiveRecord::Base
   private
 
     def logo_dimensions
-      required_width  = 600
-      required_height = 600
+      required_width  = 1794
+      required_height = 1200
       dimensions = Paperclip::Geometry.from_file(logo.queued_for_write[:original].path)
 
- HEAD
+ #HEAD
     errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
   end
 
