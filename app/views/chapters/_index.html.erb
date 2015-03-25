@@ -1,0 +1,18 @@
+
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% @chapters.each do |chapter| %>
+        <div class="list-group">
+        <%= link_to course_chapter_path(chapter.course, chapter), class: "list-group-item" do %>
+        <h4 class="list-group-item-heading"><%= chapter.title %></h4>
+        <p class="list-group-item-text"><%= chapter.desc %></p>
+          <% @challenges.each do |challeng| %>
+          <ul>
+            <li> <%= challeng.name %> </li>
+          </ul>
+          <% end  %>
+        <% end %>
+        </div>
+        <% end %>
+      </div>
+  </div>

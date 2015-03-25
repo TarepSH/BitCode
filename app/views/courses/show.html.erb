@@ -17,8 +17,10 @@
   </div>
 </div>
 <p id="notice"><%= notice %></p>
-<p>
-  <%= @course.desc %>
-</p>
+
+  <div class="chapters-info">
+    <%= render 'chapters/index' %>
+  </div>
+
 
 <%= link_to 'Back', courses_path %>
