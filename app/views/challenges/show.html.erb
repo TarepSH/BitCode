@@ -1,32 +1,51 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbarcolor' %>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <%= @challenge.name %> - <span class="badge"> <%= @challenge.points %> نقطة</span></h3>
+  </div>
+  <div class="panel-body">
 <p>
-  <strong>Name:</strong>
-  <%= @challenge.name %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
   <%= @challenge.desc %>
 </p>
+</div>
+</div>
 
-<p>
-  <strong>Chapter:</strong>
-  <%= @challenge.chapter_id %>
-</p>
 
-<div id="editor">
+
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-pills" role="tablist">
+    <li class="pull-left" role="presentation" class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">html</a></li>
+    <li class="pull-left" role="presentation"><a href="#css" aria-controls="css" role="tab" data-toggle="tab">css</a></li>
+    <li class="pull-left" role="presentation"><a href="#js" aria-controls="js" role="tab" data-toggle="tab">JavaScript</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="html"><div id="editor"></div></div>
+    <div role="tabpanel" class="tab-pane" id="css"><div id="editor-css"></div></div>
+    <div role="tabpanel" class="tab-pane" id="js"><div id="editor-js"></div></div>
+
+  </div>
+
 </div>
 
 <div id="view2">
   <iframe id="frame" srcdoc="<h4>Hello, World!</h4>" sandbox ></iframe>
 </div>
 
+
+
+<%= render 'layouts/footercoloer' %>
+
 <%= form_for :challenges, remote:true, html: {id: "formcode2"}  do |f| %>
   <p>
     <%= hidden_field_tag :text  %>
   </p>
-
   <p>
     <%= f.submit "إرسال"%>
   </p>
@@ -43,11 +62,28 @@
     var code = editor.getValue();
     $("#frame").attr("srcdoc", code);
     document.getElementById('text').value = code;
-
   });
-      </script>
-</div>
-<script charset="utf-8">
 </script>
 
+</div>
+
+<script charset="utf-8">
+
+$('#css a').click(function (e) {
+e.preventDefault()
+$(this).tab('show')
+})
+
+
+$('#css a').click(function (e) {
+e.preventDefault()
+$(this).tab('show')
+})
+
+$('#js a').click(function (e) {
+e.preventDefault()
+$(this).tab('show')
+})
+
+</script>
 <%= link_to 'Back', course_chapter_challenges_path(params[:course_id], params[:chapter_id]) %>

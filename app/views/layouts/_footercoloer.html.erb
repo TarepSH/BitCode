@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default navbar-color">
+  <div class="container">
+    <%= form_for :challenges, remote:true, html: {id: "formcode2"}  do |f| %>
+      <p>
+        <%= hidden_field_tag :text  %>
+      </p>
+      <p>
+        <%= f.submit "إرسال", class:"btn btn-primary btn-sm"%>
+      </p>
+    <% end %>
+
+  </div>
+</nav>

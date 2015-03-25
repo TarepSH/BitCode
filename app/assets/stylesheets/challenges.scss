@@ -1,7 +1,7 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#editor {
+#editor, #editor-css, #editor-js {
     height: 450px;
     width: 100%;
     z-index: 1;
@@ -11,12 +11,20 @@
     font-variant: normal;
     }
 
+    #editor-css, #editor-js{
+      background-color: #C0C0C0;
+    }
+
 iframe {
   height: 300px;
   width: 300px;
   background-color: #FFFFFF;
   position: absolute;
   right: 20px;
-  top: 170px;
+  top: 200px;
   z-index: 2;
  }
+
+.panel {
+  margin-bottom:-35px;
+}

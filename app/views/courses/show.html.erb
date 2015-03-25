@@ -1,3 +1,5 @@
+<%= render 'layouts/navbar' %>
+
 <style media="screen">
   .course-header {
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(<%= @course.logo.url %>);
@@ -24,3 +26,4 @@
 
 
 <%= link_to 'Back', courses_path %>
+<%= render 'layouts/footer' %>
