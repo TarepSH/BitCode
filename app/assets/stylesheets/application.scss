@@ -139,6 +139,80 @@ body p {
 }
 
 
+
+/* Footer CSS */
+.footer {
+  background-color: #383838;
+  min-height: 180px;
+  direction: rtl;
+  color: #A0A0A0  ;
+  padding-top:25px;
+
+}
+
+.links_footer li{
+  list-style-type:none;
+  line-height: 170%;
+}
+
+.links_footer a {
+  color: #a0a0a0;
+}
+.links_footer li a:hover{
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color: transparent;
+}
+
+.links_footer li a:visted{
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color: transparent;
+}
+
+.info-footer h6 {
+  direction: ltr;
+  padding-left: 20px;
+}
+
+
+.info-footer-gp {
+  text-align:left;
+  padding-left: 100px;
+}
+
+
+.info-footer-gp a:hover {
+  background-color: transparent;
+  }
+
+  .info-footer-gp img:hover {
+    opacity: 0.7;
+      }
+
+
+.footer-copy {
+  text-align:center;
+  direction: rtl;
+}
+.social-footer li{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.social-footer a:hover{
+  background-color: transparent;
+}
+
+.sm-footer:hover, .sm-footer:active {
+   -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 /* navbar colering
 .navbar-default {
   background-color: #1695a3;
