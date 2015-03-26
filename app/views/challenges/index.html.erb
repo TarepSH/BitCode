@@ -40,7 +40,10 @@
       <%= t('challenges.check_validate_note') %>
     </div>
     <div class="col xs-3">
-      <a href="#" class="pull-left btn btn-danger" ng-click="checkValidate()">
+      <a href="#" class="pull-left btn btn-danger" ng-click="checkValidate({
+        name: '<%= request_forgery_protection_token.to_s %>',
+        value: '<%= form_authenticity_token %>'
+      })">
         <%= t('challenges.check_validate') %>
       </a>
     </div>
