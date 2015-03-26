@@ -3,7 +3,7 @@
   <%= javascript_include_tag 'angular/angular', 'data-turbolinks-track' => true %>
 <% end %>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-app="bitCodeApp" ng-controller="ChallengesCtrl">
   <p id="notice"><%= notice %></p>
 
   <h1><%= t('challenges.list') %></h1>
@@ -14,11 +14,16 @@
         <p><%= challenge.desc %></p>
       <% end %>
     </div>
-    <div class="col-sm-3 col-xs-12">
-      OUTPUT HERE
+    <div class="col-sm-4 col-xs-12">
+      <div class="compiled-code" compile="code"></div>
     </div>
-    <div class="col-sm-5 col-xs-12">
-      CODE HERE
+    <div class="col-sm-4 col-xs-12">
+      <div ui-ace="{
+        useWrapMode : true,
+        theme: 'vibrant_ink',
+        mode: '{{ code_type }}',
+        onLoad: aceLoaded,
+      }" ng-model="code"></div>
     </div>
   </div>
 </div>

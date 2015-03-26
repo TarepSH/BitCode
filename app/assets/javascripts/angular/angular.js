@@ -19,3 +19,5 @@
 //= require ./angular-ui-router.js
 //= require ./ui-bootstrap-tpls.js
 //= require ./loading-bar.js
+
+//= require ./app.js
