@@ -5,5 +5,9 @@ ar:
     sign_in: دخول
     sign_out: تسجيل الخروج
     sign_up: تسجيل
+    home:
+      name: بت كود
+  challenges:
+    list: التحديات
   courses:
     my_courses: دوراتي

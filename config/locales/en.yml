@@ -5,5 +5,9 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+    home:
+      name: BitCode
+  challenges:
+    list: Challenges List
   courses:
     my_courses: My Courses
