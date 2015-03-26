@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def set_local
     I18n.locale = 'ar'
+
+    if (request.path.split('/')[1] == 'admin')
+      I18n.locale = 'en'
+    end
   end
 
 end
