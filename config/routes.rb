@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :courses, only: [:index, :show] do
     resources :chapters, only: [:index, :show] do
-      resources :challenges, only: [:index]
+      resources :challenges, only: [:index, :show] do
+        post 'check_validation' => 'challenges#check_validation'
+      end
     end
   end
 

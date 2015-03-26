@@ -61,6 +61,32 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def check_validation
+    @challenge = Challenge.find(params[:challenge_id])
+    @steps = @challenge.challenge_steps
+
+    result = false
+    message = ""
+
+    @steps.each do |step|
+      puts step.step_text
+      puts params[:tabs][0]["starter_code"]
+      hcm = HtmlCssMatcher.new(step.step_text, params[:tabs][0]["starter_code"])
+
+      result, message = hcm.run
+
+      break if (!result)
+    end
+
+    respond_to do |format|
+      if (result)
+        format.json { render json: {success: true} }
+      else
+        format.json { render json: {success: false, message: message} }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
