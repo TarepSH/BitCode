@@ -21,3 +21,5 @@
 //= require ./loading-bar.js
 
 //= require ./app.js
+
+//= require_directory ./services

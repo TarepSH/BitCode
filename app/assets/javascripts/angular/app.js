@@ -36,9 +36,18 @@ angular
       };
     });
   })
-  .controller('ChallengesCtrl', ["$scope", function ($scope) {
+  .controller('ChallengesCtrl', ["$scope", "$location", "challenges", function ($scope, $location, challenges) {
     $scope.code = "<html>\n    <h1>مرحبا بالعالم</h1>\n</html>";
     $scope.code_type = "html";
+    $scope.challenges =  [];
+
+    var path = $location.$$absUrl.split('courses')[1]
+    var ids_array = path.split('/')
+
+    challenges.query({course_id: ids_array[1], chapter_id: ids_array[3]})
+      .$promise.then(function (data) {
+        $scope.challenges = data;
+      });
 
     $scope.aceLoaded = function(_editor) {
       // Options
