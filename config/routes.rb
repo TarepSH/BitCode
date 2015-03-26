@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :courses, only: [:index, :show] do
     resources :chapters, only: [:index, :show] do
-      resources :challenges, only: [:index, :show]
+      resources :challenges, only: [:index]
     end
   end
 
