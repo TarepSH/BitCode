@@ -50,6 +50,10 @@ angular
         $scope.selectedChallenge = $scope.challenges[0];
       });
 
+    $scope.selectChallenge = function (challenge) {
+      $scope.selectedChallenge = challenge;
+    }
+
     $scope.getFinalCodeFor = function (selectedChallenge) {
       if ($scope.selectedChallenge) {
         var finalCode = ""

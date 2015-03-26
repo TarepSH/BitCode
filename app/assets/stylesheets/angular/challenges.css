@@ -1,3 +1,20 @@
+.challenges-list {
+  list-style: none;
+  padding: 0;
+}
+
+.challenges-list > li {
+  padding: 5px;
+}
+
+.challenges-list a {
+  text-decoration: blink;
+}
+
+.challenges-list .active {
+  background-color: #eee;
+}
+
 .ace_editor {
   height: 458px;
 }
