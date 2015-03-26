@@ -1,13 +1,15 @@
 ar:
   BitCode: بت كود
   acount:
+    home:
+      name: بت كود
     settings: اعدادات الحساب
     sign_in: دخول
     sign_out: تسجيل الخروج
     sign_up: تسجيل
-    home:
-      name: بت كود
   challenges:
     list: التحديات
+    check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
+    check_validate: تحقق
   courses:
     my_courses: دوراتي

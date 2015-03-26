@@ -1,13 +1,16 @@
 en:
   BitCode: BitCode
   acount:
+    home:
+      name: BitCode
     settings: Acount Settings
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
-    home:
-      name: BitCode
   challenges:
     list: Challenges List
+    check_validate_note: You can check your code validation by clicking "Check Validate"
+      button
+    check_validate: Check Validate
   courses:
     my_courses: My Courses
