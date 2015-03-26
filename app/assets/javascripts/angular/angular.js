@@ -9,7 +9,9 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+//= require ./src-min-noconflict/ace.js
 //= require ./angular-lib.js
+//= require ./ui-ace.js
 //= require ./json3.js
 //= require ./angular-resource.js
 //= require ./angular-animate.js
