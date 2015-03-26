@@ -20,20 +20,20 @@ class HtmlCssMatcher
           match_tag = match_result[0]
           if (!id.nil?)
             if (match_tag["id"] != id)
-              raise "#{tag_name} doesn't has id #{id}"
+              return [false, "#{tag_name} doesn't has id #{id}"]
             end
           end
 
           if (classes.length > 0)
             if (!(classes - match_tag["class"].split(' ')).empty?)
-              raise "#{tag_name} doesn't has classes #{classes.join(' ')}"
+              return [false, "#{tag_name} doesn't has classes #{classes.join(' ')}"]
             end
           end
         else
-          raise "#{tag_name} not exsisted"
+          return [false, "#{tag_name} not exsisted"]
         end
       end
-      return true
+      return [true]
     end
 
     /There is "(.*)" hierarchy/.match(regex) do |res|
@@ -54,29 +54,29 @@ class HtmlCssMatcher
           match_tag = match_result[0]
           if (!id.nil?)
             if (match_tag["id"] != id)
-              raise "#{tag_name} doesn't has id #{id}"
+              return [false, "#{tag_name} doesn't has id #{id}"]
             end
           end
 
           if (classes.length > 0)
             if (!(classes - match_tag["class"].split(' ')).empty?)
-              raise "#{tag_name} doesn't has classes #{classes.join(' ')}"
+              return [false, "#{tag_name} doesn't has classes #{classes.join(' ')}"]
             end
           end
         else
-          raise "#{tag_name} not exsisted"
+          return [false, "#{tag_name} not exsisted"]
         end
       end
-      return true
+      return [true]
     end
 
     /"(.*)" tag is exsist/.match(regex) do |res|
       html_structure = Nokogiri::HTML(@code)
-      match_result = html_structure.xpath(res[1])
+      match_result = html_structure.css(res[1])
       if (match_result.length > 0)
-        return true
+        return [true]
       else
-        raise "#{res[1]} not exsisted"
+        return [false, "#{res[1]} not exsisted"]
       end
     end
 
@@ -86,12 +86,12 @@ class HtmlCssMatcher
       if (match_result.length > 0)
         match_result = match_result[0].xpath(res[1])
         if (match_result.length > 0)
-          return true
+          return [true]
         else
-          raise "#{res[1]} not inside #{res[2]}"
+          return [false, "#{res[1]} not inside #{res[2]}"]
         end
       else
-        raise "#{res[1]} not exsisted"
+        return [false, "#{res[1]} not exsisted"]
       end
     end
 
@@ -100,16 +100,16 @@ class HtmlCssMatcher
       match_result = html_structure.css(res[2])
       if (match_result.length > 0)
         if (res[1] == match_result[0].children.text)
-          return true
+          return [true]
         else
-          raise "There is no #{res[1]} inside #{res[2]}"
+          return [false, "There is no #{res[1]} inside #{res[2]}"]
         end
       else
-        raise "#{res[2]} not exsisted"
+        return [false, "#{res[2]} not exsisted"]
       end
     end
 
-    raise "No Matcher found."
+    return [false, "No Matcher found."]
   end
 
   private
