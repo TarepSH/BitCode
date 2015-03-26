@@ -47,7 +47,21 @@ angular
     challenges.query({course_id: ids_array[1], chapter_id: ids_array[3]})
       .$promise.then(function (data) {
         $scope.challenges = data;
+        $scope.selectedChallenge = $scope.challenges[0];
       });
+
+    $scope.getFinalCodeFor = function (selectedChallenge) {
+      if ($scope.selectedChallenge) {
+        var finalCode = ""
+        for (var i=0; i < $scope.selectedChallenge.tabs.length; i++) {
+          finalCode += "\n\n" + $scope.selectedChallenge.tabs[i].starter_code;
+        }
+        return finalCode;
+      }
+      else {
+        return "";
+      }
+    }
 
     $scope.aceLoaded = function(_editor) {
       // Options

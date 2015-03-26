@@ -15,15 +15,19 @@
       </div>
     </div>
     <div class="col-sm-4 col-xs-12">
-      <div class="compiled-code" compile="code"></div>
+      <div class="compiled-code" compile="getFinalCodeFor(selectedChallenge)"></div>
     </div>
-    <div class="col-sm-4 col-xs-12">
-      <div ui-ace="{
-        useWrapMode : true,
-        theme: 'vibrant_ink',
-        mode: '{{ code_type }}',
-        onLoad: aceLoaded,
-      }" ng-model="code"></div>
+    <div class="col-sm-4 col-xs-12 code-container">
+      <tabset>
+        <tab ng-repeat="tab in selectedChallenge.tabs" heading="{{tab.name}}">
+          <div ui-ace="{
+            useWrapMode : true,
+            theme: 'vibrant_ink',
+            mode: '{{ tab.language_name }}',
+            onLoad: aceLoaded,
+          }" ng-model="tab.starter_code"></div>
+        </tab>
+      </tabset>
     </div>
   </div>
 </div>

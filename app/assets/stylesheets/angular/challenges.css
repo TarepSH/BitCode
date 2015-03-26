@@ -1,4 +1,12 @@
+.ace_editor {
+  height: 458px;
+}
+
 .compiled-code {
   height: 500px;
   border: 1px solid lightgray;
+}
+
+.code-container .nav.nav-tabs > li {
+  float: left;
 }
