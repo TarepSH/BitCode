@@ -11,6 +11,7 @@ ar:
     check_validate: تحقق
     check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
     list: التحديات
+    you_already_did_it: لم حصلت على اي نقطة لانك قمت بهذا التحدي سابقا
     you_earned_points: ربحت %{points_no} نقطة
     your_answer_is_correct: اجابتك صحيحة
   courses:

@@ -82,8 +82,17 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if (result)
-        UserSolution.create!(code: user_code, points: @challenge.points, user: current_user)
-        format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"} }
+        user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id)
+        if (user_solution)
+          format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"} }
+        else
+          UserSolution.create!(
+            code: user_code,
+            points: @challenge.points,
+            user: current_user, challenge: @challenge
+          )
+          format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"} }
+        end
       else
         format.json { render json: {success: false, message: message} }
       end
