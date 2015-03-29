@@ -45,7 +45,7 @@ angular.module('bitCodeApp')
         data).then(function (res) {
           var data = res.data;
           if (data.success) {
-            notificationService.success("\nYour asnwer is correct");
+            notificationService.success("\n" + data.message);
           }
           else {
             notificationService.error("\nYour asnwer is incorrect, "+data.message);

@@ -8,8 +8,10 @@ ar:
     sign_out: تسجيل الخروج
     sign_up: تسجيل
   challenges:
-    list: التحديات
-    check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
     check_validate: تحقق
+    check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
+    list: التحديات
+    you_earned_points: ربحت %{points_no} نقطة
+    your_answer_is_correct: اجابتك صحيحة
   courses:
     my_courses: دوراتي

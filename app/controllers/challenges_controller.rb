@@ -65,13 +65,15 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:challenge_id])
     @steps = @challenge.challenge_steps
 
+    user_code = params[:tabs][0]["starter_code"]
+
     result = false
     message = ""
 
     @steps.each do |step|
       puts step.step_text
       puts params[:tabs][0]["starter_code"]
-      hcm = HtmlCssMatcher.new(step.step_text, params[:tabs][0]["starter_code"])
+      hcm = HtmlCssMatcher.new(step.step_text, user_code)
 
       result, message = hcm.run
 
@@ -80,7 +82,8 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if (result)
-        format.json { render json: {success: true} }
+        UserSolution.create!(code: user_code, points: @challenge.points)
+        format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"} }
       else
         format.json { render json: {success: false, message: message} }
       end

@@ -8,9 +8,11 @@ en:
     sign_out: Sign out
     sign_up: Sign up
   challenges:
-    list: Challenges List
+    check_validate: Check Validate
     check_validate_note: You can check your code validation by clicking "Check Validate"
       button
-    check_validate: Check Validate
+    list: Challenges List
+    you_earned_points: you earned %{points_no} points
+    your_answer_is_correct: Your answer is correct
   courses:
     my_courses: My Courses
