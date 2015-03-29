@@ -24,3 +24,4 @@
 //= require ./app.js
 
 //= require_directory ./services
+//= require_directory ./controllers
