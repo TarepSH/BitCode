@@ -9,7 +9,8 @@ angular
     'ui.bootstrap',
     'angular-loading-bar',
     'ui.bootstrap.tpls',
-    'ui.ace'
+    'ui.ace',
+    'jlareau.pnotify'
   ], function($compileProvider) {
     // configure new 'compile' directive by passing a directive
     // factory function. The factory function injects the '$compile'

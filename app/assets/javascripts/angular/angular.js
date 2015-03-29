@@ -19,6 +19,7 @@
 //= require ./angular-ui-router.js
 //= require ./ui-bootstrap-tpls.js
 //= require ./loading-bar.js
+//= require ./angular-pnotify.js
 
 //= require ./app.js
 
