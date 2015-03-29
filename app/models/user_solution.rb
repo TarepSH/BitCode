@@ -18,4 +18,19 @@ class UserSolution < ActiveRecord::Base
       field :code
     end
   end
+
+  # Methods
+  after_save :increase_user_point
+
+  private
+
+  def increase_user_point
+    user = self.user
+    if (user.score)
+      user.score += self.points
+    else
+      user.score = self.points
+    end
+    user.save
+  end
 end

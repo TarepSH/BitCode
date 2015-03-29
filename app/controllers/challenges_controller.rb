@@ -82,7 +82,7 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if (result)
-        UserSolution.create!(code: user_code, points: @challenge.points)
+        UserSolution.create!(code: user_code, points: @challenge.points, user: current_user)
         format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"} }
       else
         format.json { render json: {success: false, message: message} }
