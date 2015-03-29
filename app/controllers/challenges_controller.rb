@@ -82,7 +82,7 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if (result)
-        user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id)
+        user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id).first
         if (user_solution)
           format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"} }
         else
