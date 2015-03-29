@@ -47,7 +47,9 @@ angular.module('bitCodeApp')
           if (data.success) {
             notificationService.success("\n" + data.message);
 
-            if ($scope.challenges.indexOf($scope.selectedChallenge) == $scope.challenges.length-1) {
+            var selectChallengeArrayId = $scope.challenges.indexOf($scope.selectedChallenge);
+
+            if (selectChallengeArrayId == $scope.challenges.length-1) {
               new PNotify({
                 title: 'مبارك!، لقد انهيت هذا الفصل بنجاح',
                 text: 'انتقل إلى الى صفحة الفصول؟',
@@ -76,6 +78,9 @@ angular.module('bitCodeApp')
                   history: false
                 }
               });
+            }
+            else {
+              $scope.selectedChallenge = $scope.challenges[selectChallengeArrayId+1];
             }
           }
           else {
