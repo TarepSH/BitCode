@@ -46,6 +46,37 @@ angular.module('bitCodeApp')
           var data = res.data;
           if (data.success) {
             notificationService.success("\n" + data.message);
+
+            if ($scope.challenges.indexOf($scope.selectedChallenge) == $scope.challenges.length-1) {
+              new PNotify({
+                title: 'مبارك!، لقد انهيت هذا الفصل بنجاح',
+                text: 'انتقل إلى الى صفحة الفصول؟',
+                icon: 'glyphicon glyphicon-question-sign',
+                hide: false,
+                confirm: {
+                  confirm: true,
+                  buttons: [{
+                    text: 'نعم',
+                    addClass: 'btn-primary',
+                    click: function(notice) {
+                      location.href = "/courses/" + course_id + "/chapters";
+                    }
+                  }, {
+                    text: 'لا',
+                    click: function(notice) {
+                      notice.remove();
+                    }
+                  }]
+                },
+                buttons: {
+                  closer: false,
+                  sticker: false
+                },
+                history: {
+                  history: false
+                }
+              });
+            }
           }
           else {
             notificationService.error("\nYour asnwer is incorrect, "+data.message);
