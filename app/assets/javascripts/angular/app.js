@@ -36,4 +36,14 @@ angular
         );
       };
     });
-  });
+  })
+  .config(['notificationServiceProvider', function(notificationServiceProvider) {
+
+    notificationServiceProvider
+      .setStack('top_left', 'stack-topleft', {
+        dir1: 'down',
+        dir2: 'right'
+      })
+      .setDefaultStack('top_left');
+
+  }])

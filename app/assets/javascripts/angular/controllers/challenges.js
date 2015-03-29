@@ -1,6 +1,6 @@
 
 angular.module('bitCodeApp')
-  .controller('ChallengesCtrl', ["$scope", "$location", "$http", "challenges", function ($scope, $location, $http, challenges) {
+  .controller('ChallengesCtrl', ["$scope", "$location", "$http", "notificationService", "challenges", function ($scope, $location, $http, notificationService, challenges) {
     $scope.code = "<html>\n    <h1>مرحبا بالعالم</h1>\n</html>";
     $scope.code_type = "html";
     $scope.challenges =  [];
@@ -45,10 +45,10 @@ angular.module('bitCodeApp')
         data).then(function (res) {
           var data = res.data;
           if (data.success) {
-            alert("Your asnwer is correct");
+            notificationService.success("\nYour asnwer is correct");
           }
           else {
-            alert("Your asnwer is incorrect, "+data.message);
+            notificationService.error("\nYour asnwer is incorrect, "+data.message);
           }
         });
     }
