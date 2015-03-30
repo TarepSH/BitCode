@@ -33,3 +33,29 @@
 .home-content {
   padding-top: 20px;
 }
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
+.jumbotron p {
+  font-size: 14px;
+}
+
+.panel-heading {
+  background-color:#337ab7;
+}
+
+.panel-default > .panel-heading {
+  background-color:#337ab7;
+}
+
+.item {
+    display:block;
+}
+
+.carousel-caption{
+    color:#000;
+    position:static;
+}
