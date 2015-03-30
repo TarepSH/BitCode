@@ -1,6 +1,8 @@
 
 angular.module('bitCodeApp')
-  .controller('ChallengesCtrl', ["$scope", "$location", "$http", "notificationService", "challenges", function ($scope, $location, $http, notificationService, challenges) {
+  .controller('ChallengesCtrl',
+  ["$scope", "$location", "$http", "notificationService", "notificationAlert", "challenges",
+  function ($scope, $location, $http, notificationService, notificationAlert, challenges) {
     $scope.code = "<html>\n    <h1>مرحبا بالعالم</h1>\n</html>";
     $scope.code_type = "html";
     $scope.challenges =  [];
@@ -46,38 +48,41 @@ angular.module('bitCodeApp')
           var data = res.data;
           if (data.success) {
             notificationService.success("\n" + data.message);
-
             var selectChallengeArrayId = $scope.challenges.indexOf($scope.selectedChallenge);
 
-            if (selectChallengeArrayId == $scope.challenges.length-1) {
-              new PNotify({
-                title: 'مبارك!، لقد انهيت هذا الفصل بنجاح',
-                text: 'انتقل إلى الى صفحة الفصول؟',
-                icon: 'glyphicon glyphicon-question-sign',
-                hide: false,
-                confirm: {
-                  confirm: true,
-                  buttons: [{
-                    text: 'نعم',
-                    addClass: 'btn-primary',
-                    click: function(notice) {
-                      location.href = "/courses/" + course_id + "/chapters";
+            if (data.next_chapter_id != 0) {
+              if (data.next_chapter_id == null) {
+                notificationAlert.confirm(
+                  "تهانينا",
+                  "تهانينا، لقد انهيت هذا الكورس بنجاح!",
+                  [
+                    {
+                      text: 'استمرار',
+                      href: "/courses/" + course_id + "/chapters"
+                    },
+                    {
+                      text: 'بقاء'
                     }
-                  }, {
-                    text: 'لا',
-                    click: function(notice) {
-                      notice.remove();
+                  ],
+                  'success'
+                )
+              }
+              else {
+                notificationAlert.confirm(
+                  "مبارك!، لقد انهيت هذا الفصل بنجاح",
+                  "انتقل إلى الى صفحة الفصول؟",
+                  [
+                    {
+                      text: 'نعم',
+                      href: "/courses/" + course_id + "/chapters/" + data.next_chapter_id
+                    },
+                    {
+                      text: 'لا'
                     }
-                  }]
-                },
-                buttons: {
-                  closer: false,
-                  sticker: false
-                },
-                history: {
-                  history: false
-                }
-              });
+                  ],
+                  'success'
+                )
+              }
             }
             else {
               $scope.selectedChallenge = $scope.challenges[selectChallengeArrayId+1];

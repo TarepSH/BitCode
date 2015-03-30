@@ -36,4 +36,8 @@ class Chapter < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  # Methods
+  def next
+    Chapter.where('id > ?', self.id).order('id ASC').first
+  end
 end

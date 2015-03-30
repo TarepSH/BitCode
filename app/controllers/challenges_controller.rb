@@ -62,7 +62,9 @@ class ChallengesController < ApplicationController
   end
 
   def check_validation
-    @challenge = Challenge.find(params[:challenge_id])
+    @chapter = Chapter.where(id: params[:chapter_id].to_i).eager_load(challenges: [:challenge_steps]).first
+    @challenges = @chapter.challenges
+    @challenge = @challenges.find_all { |challenge| challenge.id == params[:challenge_id].to_i }.first
     @steps = @challenge.challenge_steps
 
     user_code = params[:tabs][0]["starter_code"]
@@ -83,15 +85,33 @@ class ChallengesController < ApplicationController
     respond_to do |format|
       if (result)
         user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id).first
+        message = ""
         if (user_solution)
-          format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"} }
+          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"
         else
           UserSolution.create!(
             code: user_code,
             points: @challenge.points,
             user: current_user, challenge: @challenge
           )
-          format.json { render json: {success: true, message: "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"} }
+          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"
+        end
+
+        if (@challenges.last.id == @challenge.id)
+          next_chapter = @chapter.next
+          format.json { render json: {
+              success: true,
+              message: message,
+              next_chapter_id: next_chapter ? next_chapter.id : nil
+            }
+          }
+        else
+          format.json { render json: {
+              success: true,
+              message: message,
+              next_chapter_id: 0
+            }
+          }
         end
       else
         format.json { render json: {success: false, message: message} }
