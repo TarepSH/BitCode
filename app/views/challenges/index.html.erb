@@ -39,6 +39,9 @@
       <span class="glyphicon glyphicon-warning-sign">&nbsp;</span>
       <%= t('challenges.check_validate_note') %>
     </div>
+
+
+
     <div class="col xs-3">
       <a href="#" class="pull-left btn btn-danger" ng-click="checkValidate({
         name: '<%= request_forgery_protection_token.to_s %>',
@@ -46,6 +49,40 @@
       })">
         <%= t('challenges.check_validate') %>
       </a>
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#myModal">
+      التحديات
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">coure name</h4>
+          </div>
+          <div class="modal-body">
+            <h1><%= t('challenges.list') %></h1>
+            <div class="row">
+              <div class="col-sm-12 col-xs-12">
+                <ul class="challenges-list">
+                  <li ng-repeat="challenge in challenges" ng-class="{'active': selectedChallenge == challenge}">
+                    <a href="#" ng-click="selectChallenge(challenge)">
+                      <h3>{{ challenge.name }}</h3>
+                      <p>{{ challenge.desc }}</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   </div>
+
+
+
 </div>
