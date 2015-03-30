@@ -51,11 +51,22 @@
   background-color:#337ab7;
 }
 
-.item {
-    display:block;
+.content-text {
+  padding-top:50px;
 }
 
-.carousel-caption{
-    color:#000;
-    position:static;
+.home-singup {
+  text-align: center;
+  min-height: 200px;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/assets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+}
+
+.home-singup h2 {
+  padding-top: 30px;
+  line-height: 1.5;
+  direction: rtl;
+  color: #FFFFFF;
+  font-family: 'Noto Kufi Arabic', serif;
 }
