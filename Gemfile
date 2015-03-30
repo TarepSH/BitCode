@@ -41,7 +41,6 @@ gem 'devise'
 gem "paperclip", "~> 4.2"
 # cancan gem for auth Authorization
 gem "cancan"
-
 # Bootstarp gem to adding style for app
 # gem 'bootstrap-sass'
 
