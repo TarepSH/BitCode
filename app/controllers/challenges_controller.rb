@@ -62,7 +62,7 @@ class ChallengesController < ApplicationController
   end
 
   def check_validation
-    @chapter = Chapter.where(id: params[:chapter_id].to_i).eager_load(challenges: [:challenge_steps]).first
+    @chapter = Chapter.where(id: params[:chapter_id].to_i).eager_load(:badges, challenges: [:challenge_steps]).order('challenges.id').first
     @challenges = @chapter.challenges
     @challenge = @challenges.find_all { |challenge| challenge.id == params[:challenge_id].to_i }.first
     @steps = @challenge.challenge_steps
@@ -98,6 +98,24 @@ class ChallengesController < ApplicationController
         end
 
         if (@challenges.last.id == @challenge.id)
+          user_solutions = UserSolution.where('user_id = ? AND challenge_id IN (?)',
+            current_user.id,
+            @challenges.map { |challenge| challenge.id }
+          )
+
+          user_points = user_solutions.sum(:points)
+          badges = current_user.badges
+          chapter_badges = @chapter.badges.where('points <= ?', user_points)
+          new_badges = []
+
+          chapter_badges.each do |badge|
+            if (!badges.include?(badge))
+              new_badges << badge
+            end
+          end
+
+          current_user.badges << new_badges
+
           next_chapter = @chapter.next
           format.json { render json: {
               success: true,
