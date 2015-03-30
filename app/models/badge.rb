@@ -3,6 +3,7 @@ class Badge < ActiveRecord::Base
 
   # Validates
   validates :name, :presence => true
+  validates :points, :presence => true
 
   validates :picture, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :picture
