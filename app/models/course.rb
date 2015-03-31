@@ -41,13 +41,16 @@ class Course < ActiveRecord::Base
   private
 
     def logo_dimensions
-      required_width  = 1794
-      required_height = 1200
-      dimensions = Paperclip::Geometry.from_file(logo.queued_for_write[:original].path)
+      file_object = logo.queued_for_write[:original]
 
- #HEAD
-    errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
-  end
+      unless file_object.blank?
+        required_width  = 1794
+        required_height = 1200
+        dimensions = Paperclip::Geometry.from_file(file_object.path)
+
+        errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
+      end
+    end
 
   #frindly_id
   extend FriendlyId

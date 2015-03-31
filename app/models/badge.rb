@@ -39,9 +39,13 @@ class Badge < ActiveRecord::Base
   private
 
     def picture_dimensions
-      required_width = required_height = 300
-      dimensions = Paperclip::Geometry.from_file(picture.queued_for_write[:original].path)
+      file_object = picture.queued_for_write[:original]
 
-      errors.add(:picture, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
+      unless file_object.blank?
+        required_width = required_height = 300
+        dimensions = Paperclip::Geometry.from_file(file_object.path)
+
+        errors.add(:picture, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
+      end
     end
 end
