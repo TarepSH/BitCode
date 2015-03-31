@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :user_solutions
   has_and_belongs_to_many :courses
   has_and_belongs_to_many :badges
+  has_and_belongs_to_many :hints
 
   # Methods
   def admin?
