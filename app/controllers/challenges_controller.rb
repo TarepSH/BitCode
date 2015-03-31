@@ -137,6 +137,19 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def get_hint
+    @hint = Hint.find(params[:hint_id])
+
+    if (@hint)
+      if (!current_user.hints.include?(@hint))
+        current_user.hints << @hint
+      end
+      respond_to do |format|
+        format.json { render json: @hint }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
