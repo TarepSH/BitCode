@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :challenges, only: [:index, :show] do
         post 'check_validation' => 'challenges#check_validation'
         get 'hints/:hint_id' => "challenges#get_hint"
+        get 'get_next_hint' => "challenges#get_next_hint"
       end
     end
   end

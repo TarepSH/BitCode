@@ -22,6 +22,23 @@ angular.module('bitCodeApp')
       $scope.selectedChallenge = challenge;
     }
 
+    $scope.getHint = function (challenge) {
+      if (challenge.hints_number > 0) {
+        var lastHintId = 0;
+        if (!challenge.queriedHints) challenge.queriedHints = [];
+        if (challenge.queriedHints.length > 0)
+          lastHintId = challenge.queriedHints[$scope.challenge.queriedHints.length-1].id;
+        $http.get('/courses/'+course_id+'/chapters/'+chapter_id+'/challenges/'+challenge.id+'/get_next_hint.json',
+          {hint_id: lastHintId}).then(function (res) {
+            var data = res.data;
+            if (data) {
+              challenge.hints_number -= 1;
+              challenge.queriedHints.push(data);
+            }
+          });
+      }
+    }
+
     $scope.getFinalCodeFor = function (selectedChallenge) {
       if ($scope.selectedChallenge) {
         var finalCode = ""

@@ -89,12 +89,15 @@ class ChallengesController < ApplicationController
         if (user_solution)
           message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"
         else
+          hints_point = current_user.hints.where('hints.challenge_id = ?', @challenge.id).sum(:points)
+          new_points = @challenge.points - hints_point
+
           UserSolution.create!(
             code: user_code,
-            points: @challenge.points,
+            points: new_points,
             user: current_user, challenge: @challenge
           )
-          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: @challenge.points)}"
+          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: new_points)}"
         end
 
         if (@challenges.last.id == @challenge.id)
@@ -146,6 +149,21 @@ class ChallengesController < ApplicationController
       end
       respond_to do |format|
         format.json { render json: @hint }
+      end
+    end
+  end
+
+  def get_next_hint
+    @hint = Hint.where('challenge_id = ? AND id > ?', params[:challenge_id].to_i, params[:hint_id].to_i).first
+
+    respond_to do |format|
+      if (@hint)
+        if (!current_user.hints.include?(@hint))
+          current_user.hints << @hint
+        end
+        format.json { render json: @hint }
+      else
+        format.json { head :no_content }
       end
     end
   end
