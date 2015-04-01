@@ -7,7 +7,6 @@
   <p id="notice"><%= notice %></p>
 
   <h1><%= t('challenges.list') %></h1>
-  <input type="hidden" id="refresh" value="no">
   <div class="row">
     <div class="col-sm-4 col-xs-12">
       <ul class="challenges-list">
@@ -89,7 +88,13 @@
 
     </div>
   </div>
-
-
-
 </div>
+
+
+<input type="hidden" id="refresh" value="no">
+<script>
+  $(document).ready(function(e) {
+    if ($("#refresh").val() == 'yes') { location.reload();}
+    else { $('#refresh').val('yes'); }
+  });
+</script>
