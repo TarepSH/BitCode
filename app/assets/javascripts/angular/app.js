@@ -47,3 +47,9 @@ angular
       .setDefaultStack('top_left');
 
   }])
+
+
+$(document).ready(function(e) {
+  if ($("#refresh").val() == 'yes') { location.reload();}
+  else { $('#refresh').val('yes'); }
+});
