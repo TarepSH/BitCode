@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331100127) do
+ActiveRecord::Schema.define(version: 20150402120714) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -84,9 +84,10 @@ ActiveRecord::Schema.define(version: 20150331100127) do
     t.datetime "logo_updated_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.string   "slug"
     t.boolean  "published",         default: false
     t.boolean  "coming_soon",       default: true
+    t.string   "slug"
+    t.boolean  "is_free",           default: true
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug"
