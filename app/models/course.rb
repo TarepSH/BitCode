@@ -33,9 +33,19 @@ class Course < ActiveRecord::Base
       field :name
       field :desc
       field :logo
+      field :is_free
       field :published
       field :coming_soon
     end
+  end
+
+  # Methods
+  def free?
+    self.is_free
+  end
+
+  def coming_soon?
+    self.coming_soon
   end
 
   private
