@@ -1,26 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>
+    <%= @chapter.title %>
+    <small>
+      <%= link_to t('challenges.see_challenges'), course_chapter_challenges_path(params[:course_id], params[:id]) %>
+    </small>
+  </h1>
+  <p>
+    <%= @chapter.desc %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @chapter.title %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @chapter.desc %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <video width="420" height="340" controls>
-    <source src="<%= @chapter.video.url %>" type="video/mp4">
-    <source src="<%= @chapter.video.url %>" type="video/ogg">
-    Your browser does not support the video tag.
-  </video>
-</p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @chapter.course_id %>
-</p>
-<%= link_to 'Back', course_chapters_path(params[:course_id]) %>
+  <div class="video-container">
+    <video width="60%" controls>
+      <source src="<%= @chapter.video.url %>" type="video/mp4">
+      <source src="<%= @chapter.video.url %>" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>

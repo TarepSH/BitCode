@@ -12,9 +12,12 @@ en:
     check_validate_note: You can check your code validation by clicking "Check Validate"
       button
     list: Challenges List
+    see_challenges: See challenges
     you_already_did_it: you earned zero point as you did it before
     you_earned_points: you earned %{points_no} points
     your_answer_is_correct: Your answer is correct
+  chapters:
+    list: Chapters List
   courses:
     list: Courses List
     my_courses: My Courses
