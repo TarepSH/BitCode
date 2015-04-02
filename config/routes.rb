@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
   resources :courses, only: [:index, :show] do
+
+    post '/add_to_courses' => 'courses#add_to_courses'
+    delete '/remove_from_courses' => 'courses#remove_from_courses'
+
     resources :chapters, only: [:index, :show] do
       resources :challenges, only: [:index, :show] do
         post 'check_validation' => 'challenges#check_validation'

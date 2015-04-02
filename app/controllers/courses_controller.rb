@@ -10,8 +10,10 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @chapters = Chapter.all
-    @challenges = Challenge.all
+    @chapters = @course.chapters
+    if (current_user)
+      @user_course = current_user.courses.where(id: @course.id).first
+    end
   end
 
   # GET /courses/new
@@ -60,6 +62,30 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def add_to_courses
+    @course = Course.find(params[:course_id])
+    respond_to do |format|
+      if (current_user && !current_user.courses.where(id: @course.id).first)
+        current_user.courses << @course
+        format.json { render json: { success: true } }
+      else
+        format.json { render json: { success: false } }
+      end
+    end
+  end
+
+  def remove_from_courses
+    @course = Course.find(params[:course_id])
+    respond_to do |format|
+      if (current_user && @user_course = current_user.courses.where(id: @course.id).first)
+        current_user.courses.delete(@course.id)
+        format.json { render json: { success: true } }
+      else
+        format.json { render json: { success: false } }
+      end
     end
   end
 

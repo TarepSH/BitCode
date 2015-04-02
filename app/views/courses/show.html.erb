@@ -13,8 +13,18 @@
     <div class="col-sm-12">
       <h1><%= @course.name %><h1>
       <h4><%= @course.desc %></h4>
-      <br>
-      <a href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;أضف إلى كورساتي</a>
+      <% if current_user %>
+        <br>
+
+        <a href="#" id="remove_from_courses" style="<%= !@user_course ? 'display:none' : '' %>" onclick="removeFromMyCourses(<%= @course.id %>)" class="btn btn-lg btn-success">
+          <span class="glyphicon glyphicon-check"></span>&nbsp;أحذف من كورساتي
+        </a>
+
+        <a href="#" id="add_to_courses" style="<%= @user_course ? 'display:none' : '' %>" onclick="addToMyCourses(<%= @course.id %>)" class="btn btn-lg btn-default">
+          <span class="glyphicon glyphicon-unchecked"></span>&nbsp;أضف إلى كورساتي
+        </a>
+
+      <% end %>
     </div>
   </div>
 </div>
@@ -24,3 +34,30 @@
 </div>
 
 <%= render 'layouts/footer' %>
+
+<script>
+  function addToMyCourses (course_id) {
+    $.ajax({
+      url: '/courses/' + course_id + '/add_to_courses',
+      type: 'POST',
+      success: function( data ) {
+        if (data.success) {
+          $('#add_to_courses').hide();
+          $('#remove_from_courses').show();
+        }
+      }
+    });
+  }
+  function removeFromMyCourses (course_id) {
+    $.ajax({
+      url: '/courses/' + course_id + '/remove_from_courses',
+      type: 'DELETE',
+      success: function(data) {
+        if (data.success) {
+          $('#remove_from_courses').hide();
+          $('#add_to_courses').show();
+        }
+      }
+    });
+  }
+</script>
