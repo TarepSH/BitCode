@@ -9,10 +9,6 @@
   font-family: 'Noto Kufi Arabic', serif;
 }
 
-.chapters-info {
-  padding-top: 20px;
-}
-
 .courses-list {
   margin-top: 30px;
 }
@@ -60,4 +56,24 @@
   position: absolute;
   top: 80px;
   z-index: 10;
+}
+
+.chapters_list .list-group {
+  margin-bottom: 0;
+}
+
+.chapters_list .list-group:before {
+  width: 10px;
+  height: 40px;
+  background-color: lightgray;
+  content: '';
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.chapters_list .list-group:last-child {
+  margin-bottom: 40px;
 }
