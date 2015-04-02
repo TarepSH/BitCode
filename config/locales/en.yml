@@ -16,4 +16,5 @@ en:
     you_earned_points: you earned %{points_no} points
     your_answer_is_correct: Your answer is correct
   courses:
+    list: Courses List
     my_courses: My Courses

@@ -44,7 +44,7 @@ class Course < ActiveRecord::Base
       file_object = logo.queued_for_write[:original]
 
       unless file_object.blank?
-        required_width  = 1794
+        required_width  = 1200
         required_height = 1200
         dimensions = Paperclip::Geometry.from_file(file_object.path)
 

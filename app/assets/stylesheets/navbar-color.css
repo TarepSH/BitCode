@@ -1,12 +1,8 @@
 .navbar-color {
   background-color: #1695a3;
-  border-color: #225378;
-  padding-top: 0px;
-  padding-bottom:-10px;
+  border-color: #157C88;
   margin-bottom: 0px;
-  min-height:30px;
-  max-height:30px;
-  border-radius:0px;
+  border-radius: 0px;
 }
 
 .navbar-brand-color {
@@ -15,6 +11,10 @@
 
 .navbar-brand-color img{
   margin-top:-15px;
+}
+
+.navbar-default.navbar-color .navbar-nav > li > .dropdown-menu {
+  background: #1695A3;
 }
 
 .dropdown2 {

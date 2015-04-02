@@ -15,4 +15,5 @@ ar:
     you_earned_points: ربحت %{points_no} نقطة
     your_answer_is_correct: اجابتك صحيحة
   courses:
+    list: الكورسات المتاحة
     my_courses: دوراتي
