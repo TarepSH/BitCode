@@ -1,5 +1,12 @@
 en:
   BitCode: BitCode
+  account:
+    forget_your_password: Forgot your password?
+    login: Log in
+    minimum_characters: '%{length} characters minimum'
+    send_reset_password: Send me reset password instructions
+    signup: Sign up
+    signup_acount: Sign up new account
   acount:
     home:
       name: BitCode

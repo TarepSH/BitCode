@@ -1,5 +1,12 @@
 ar:
   BitCode: بت كود
+  account:
+    forget_your_password: نسيت كلمة المرور؟
+    login: تسجيل الدخول
+    minimum_characters: يجب ان يكون %{length} محارف أو أكثر
+    send_reset_password: ارسل لي معلومات تغيير كلمة السر
+    signup: تسجيل
+    signup_acount: تسجيل حساب جديد
   acount:
     home:
       name: بت كود
@@ -7,6 +14,19 @@ ar:
     sign_in: دخول
     sign_out: تسجيل الخروج
     sign_up: تسجيل
+  activerecord:
+    attributes:
+      user:
+        email: البريد الإلكتروني
+        name: الاسم
+        password: كلمة المرور
+        password_confirmation: تاكيد كلمة المرور
+        remember_me: تذكرني
+        username: اسم المستخدم
+    models:
+      user:
+        one: المستخدم
+        other: المستخدمون
   challenges:
     check_validate: تحقق
     check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
@@ -21,3 +41,63 @@ ar:
     list: الكورسات المتاحة
     my_courses: دوراتي
     user_courses: كورسات المستخدم
+  errors:
+    messages:
+      not_saved: لم يتم الحفظ
+      blank: فارغ، يرجى ملء الحقل
+      confirmation: غير متوافق
+      empty: فارغ، يرجى ملء الحقل
+      equal_to: يجب أن يساوي %{count}
+      even: يجب أن يكون زوجي
+      exclusion: محجوز
+      greater_than: يجب أن يكون أكبر من %{count}
+      greater_than_or_equal_to: يجب أن يكون أكبر من أو يساوي %{count}
+      inclusion: غير مدرج في القائمة
+      invalid: غير مقبول
+      less_than: يجب أن يكون أصغر من %{count}
+      less_than_or_equal_to: يجب أن يكون أصغر من أو يساوي %{count}
+      not_a_number: ليس رقما
+      not_an_integer: يجب أن يكون عدداً صحيحاً
+      odd: يجب أن يكون فردي
+      other_than:
+        few: الطول يجب ألاّ يكون %{count} أحرف
+        many: الطول يجب ألاّ يكون %{count} حرفاً
+        one: الطول يجب ألاّ يكون حرفاً وحداً
+        other: الطول يجب ألاّ يكون %{count} حرفاً
+        two: الطول يجب ألاّ يكون حرفان
+        zero: الطول يجب ألاّ يكون صفر أحرف
+      record_invalid: 'فشل التحقق من: %{errors}'
+      restrict_dependent_destroy:
+        many: لا يمكن حذف السجل لوجود سجلات تعتمد عليه %{record}
+        one: لا يمكن حذف السجل لوجود سجل يعتمد عليه %{record}
+      taken: محجوز مسبقاً
+      too_long:
+        few: أطول من اللازم (الحد الأقصى هو %{count} حروف)
+        many: أطول من اللازم (الحد الأقصى هو %{count} حرف)
+        one: أطول من اللازم (الحد الأقصى هو حرف واحد)
+        other: أطول من اللازم (الحد الأقصى هو %{count} حرف)
+        two: أطول من اللازم (الحد الأقصى هو حرفان)
+        zero: أطول من اللازم (الحد الأقصى هو ولا حرف)
+      too_short:
+        few: أقصر من اللازم (الحد الأدنى هو %{count} حروف)
+        many: أقصر من اللازم (الحد الأدنى هو %{count} حرف)
+        one: أقصر من اللازم (الحد الأدنى هو حرف واحد)
+        other: أقصر من اللازم (الحد الأدنى هو %{count} حرف)
+        two: أقصر من اللازم (الحد الأدنى هو حرفان)
+        zero: أقصر من اللازم (الحد الأدنى هو ولا حرف)
+      wrong_length:
+        few: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} أحرف)
+        many: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+        one: الطول غير مطابق للحد المطلوب (يجب أن يكون حرف واحد)
+        other: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+        two: الطول غير مطابق للحد المطلوب (يجب أن يكون حرفان)
+        zero: الطول غير مطابق للحد المطلوب (يجب أن يكون ولا حرف)
+    template:
+      body: 'يرجى التحقق من الحقول التالية:'
+      header:
+        few: 'ليس بالامكان حفظ %{model}: %{count} أخطاء.'
+        many: 'ليس بالامكان حفظ %{model}: %{count} أخطاء.'
+        one: 'ليس بالامكان حفظ %{model}: خطأ واحد.'
+        other: 'ليس بالامكان حفظ %{model}: %{count} خطأ.'
+        two: 'ليس بالامكان حفظ %{model}:  خطئان.'
+        zero: 'ليس بالامكان حفظ %{model}: لايوجد أخطاء.'
