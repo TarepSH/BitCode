@@ -3,11 +3,8 @@
   <%= javascript_include_tag 'angular/angular', 'data-turbolinks-track' => true %>
 <% end %>
 
-<div class="container-fluid" ng-app="bitCodeApp" ng-controller="ChallengesCtrl">
-  <p id="notice"><%= notice %></p>
-
-  <h1><%= t('challenges.list') %></h1>
-  <div class="row">
+<div class="container-fluid challenges-container" ng-app="bitCodeApp" ng-controller="ChallengesCtrl">
+  <div class="row challenges-content">
     <div class="col-sm-4 col-xs-12">
       <ul class="challenges-list">
         <li ng-repeat="challenge in challenges" class="challenge_item" ng-class="{'active': selectedChallenge == challenge}">
@@ -24,20 +21,20 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-4 col-xs-12">
+    <div class="col-sm-8 col-xs-12">
+      <div class="code-container">
+        <tabset>
+          <tab ng-repeat="tab in selectedChallenge.tabs" heading="{{tab.name}}">
+            <div ui-ace="{
+              useWrapMode : true,
+              theme: 'vibrant_ink',
+              mode: '{{ tab.language_name }}',
+              onLoad: aceLoaded,
+            }" ng-model="tab.starter_code"></div>
+          </tab>
+        </tabset>
+      </div>
       <div class="compiled-code" compile="getFinalCodeFor(selectedChallenge)"></div>
-    </div>
-    <div class="col-sm-4 col-xs-12 code-container">
-      <tabset>
-        <tab ng-repeat="tab in selectedChallenge.tabs" heading="{{tab.name}}">
-          <div ui-ace="{
-            useWrapMode : true,
-            theme: 'vibrant_ink',
-            mode: '{{ tab.language_name }}',
-            onLoad: aceLoaded,
-          }" ng-model="tab.starter_code"></div>
-        </tab>
-      </tabset>
     </div>
   </div>
   <div class="row check-validation">
@@ -45,8 +42,6 @@
       <span class="glyphicon glyphicon-warning-sign">&nbsp;</span>
       <%= t('challenges.check_validate_note') %>
     </div>
-
-
 
     <div class="col xs-3">
       <a href="#" class="pull-left btn btn-danger" ng-click="checkValidate({

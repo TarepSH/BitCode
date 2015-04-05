@@ -1,24 +1,34 @@
+.challenges-container {
+  background-color: #f1f1f1;
+  padding-top: 80px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.challenges-content > * {
+  padding: 0;
+}
+
 .challenges-list {
   list-style: none;
   padding: 0;
+  padding-top: 80px;
+  margin-top: -10px;
+
+  border-left: 4px double black;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 32.99%;
+  overflow: auto;
 }
 
 .challenges-list > li {
   padding: 5px;
-}
-
-.challenges-list > li > a > p {
-  height: 0;
-  overflow-y: hidden;
-
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.challenges-list > li.active > a > p {
-  height: auto;
 }
 
 .challenges-list > li > a {
@@ -34,12 +44,21 @@
   display: none;
 }
 
+.challenges-list > li > a > p {
+  height: 0;
+  overflow: hidden;
+}
+
+.challenges-list > li.active > a > p {
+  height: auto;
+}
+
 .challenges-list > li.active > a > .label {
   display: inline-block;
 }
 
 .challenges-list > li > a > .hints {
-  color: darkgray;
+  color: lightgray;
   display: none;
 }
 
@@ -52,16 +71,27 @@
 }
 
 .challenges-list .active {
-  background-color: #eee;
+  background-color: #1695a3;
+}
+
+.challenges-list .active > a {
+  color: white;
 }
 
 .ace_editor {
-  height: 458px;
+  height: 250px;
 }
 
 .compiled-code {
-  height: 500px;
-  border: 1px solid lightgray;
+  margin-top: 5px;
+  height: 230px;
+  border: 1px solid gray;
+  border-right: 0;
+
+  background-color: #fff;
+  direction: ltr;
+  padding: 5px;
+  overflow-y: auto;
 }
 
 .code-container .nav.nav-tabs > li {
@@ -71,8 +101,8 @@
 .check-validation {
   background-color: #31b0d5;
   color: white;
-  margin-top: 20px;
   padding: 15px 0;
+  position: relative;
 }
 
 .check-validation .btn {
@@ -81,4 +111,31 @@
 
 .check-validation .info {
   margin-top: 10px;
+}
+
+.nav-tabs {
+  margin-bottom: 3px;
+  border-bottom: 0;
+}
+
+.nav-tabs > li > a {
+  padding: 0;
+  margin: 0 5px;
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs > li > a:hover {
+  cursor: pointer;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 2px solid transparent;
+  border-bottom-color: #1695a3;
+  color: #117C88;
 }

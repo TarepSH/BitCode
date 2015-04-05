@@ -16,6 +16,11 @@ a {
   font-family: 'Noto Kufi Arabic', serif;
 }
 
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
 .navbar-default {
   padding-top: 20px;
   border-color: transparent;
