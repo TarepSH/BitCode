@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/my_courses' => 'courses#user_courses'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users

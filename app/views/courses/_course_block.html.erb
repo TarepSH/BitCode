@@ -1,0 +1,15 @@
+<div class="col-md-3 col-sm-4 col-xs-12">
+  <%= link_to course, class: 'text-center course-block' do %>
+    <%  if (course.free?) %>
+      <%= image_tag "free-badge.png", width: 100, class: 'free-badge' %>
+    <% end %>
+    <%  if (course.coming_soon?) %>
+      <span class="coming-soon-mask"></span>
+      <%= image_tag "coming_soon.png", width: 200, class: 'coming-soon-badge' %>
+    <% end %>
+    <%= image_tag course.logo.url, width: 200 %>
+    <h3><%= course.name %></h3>
+    <p><%= truncate course.desc, length: 120 %></p>
+    <p></p>
+  <% end %>
+</div>

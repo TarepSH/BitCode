@@ -20,3 +20,4 @@ ar:
   courses:
     list: الكورسات المتاحة
     my_courses: دوراتي
+    user_courses: كورسات المستخدم

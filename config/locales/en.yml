@@ -21,3 +21,4 @@ en:
   courses:
     list: Courses List
     my_courses: My Courses
+    user_courses: User courses
