@@ -60,6 +60,8 @@ a {
   color: #FFFFFF;
   font-family: 'Noto Kufi Arabic', serif;
   margin-top: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar-default .navbar-nav > li > a {

@@ -139,3 +139,12 @@
   border-bottom-color: #1695a3;
   color: #117C88;
 }
+
+@media (max-width: 767px) {
+  .challenges-list {
+    position: static;
+    padding: 0;
+    border: 0;
+    width: 100%;
+  }
+}

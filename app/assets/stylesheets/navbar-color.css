@@ -17,6 +17,10 @@
   background: #1695A3;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background: white;
+}
+
 .dropdown2 {
   list-style-type: none;
 }
