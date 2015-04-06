@@ -40,6 +40,7 @@ ar:
   chapters:
     list: الفصول
   courses:
+    latest_courses: أحدث الدورات التعليمية في بت كود
     list: الدورات المتاحة
     my_courses: دوراتي
     other_courses: دورات أخرى

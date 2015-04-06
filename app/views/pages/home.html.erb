@@ -133,63 +133,70 @@
 </div>
 
 <div class=" container page-header">
-  <h1>الدورات التعليمية في BitCode:</h1>
+  <h1><%= t('courses.latest_courses') %></h1>
 </div>
 
 <div class="container">
-
-<div class="col-md-6 col-md-offset-3">
-  <div class="list-group">
-    <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more1" >
-      <h4 class="list-group-item-heading">أساسيات الويب HTML 1</h4>
-      <p class="list-group-item-text">
-      هنا ستكون أول خطواتك في عالم برمجة الويب، في هذا الكورس ستتعرف على طريقة عمل الإنترنت بشكل عامل، وطريقة عمل المتصفح مع بعض المعلومات الاولية عن الـ css, html, Javascript وستبدأ بعض التحديات الرائعة عن الـ HTML لتقوم بإنشاء أول صفحة ويب لك.
-      </p>
-      <div id="more1" class="collapse">
-test text text
-      </div>
-    </a>
+  <div class="row courses-list">
+    <% @courses.each do |course| %>
+      <%= render '/courses/course_block', course: course %>
+    <% end %>
   </div>
-
-  <div class="list-group">
-    <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more2" >
-      <h4 class="list-group-item-heading">أساسيات الويب CSS 1</h4>
-      <p class="list-group-item-text">
-      بعد ما قمت بإضافة المحتوى إلى صفحتك الـ HTML الخاص بك في الكورس السابق، حان الوقت لإضافة بعض الألوان والمؤثرات المرئية الأخرى، لإضافة صورة جمالية للصفحة الويب الخاص بك، تحديثات قوية بإنتظارك في الكورس الثاني من أساسيات الويب.
-      </p>
-    <div id="more2" class="collapse">
-test text text
-    </div>
-  </a>
-
-  </div>
-
-  <div class="list-group">
-    <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more3" >
-      <h4 class="list-group-item-heading">أساسيات الويب JavaScript </h4>
-      <p class="list-group-item-text">
-      ما رأيك بإضافة بعد المرثرات والحركات الخفيفة للصفحتنا،  هنا في هذا الكورس سنتعلم كيف بإمكاننا أن نقوم بإضافة بعض الحركات والروح لصفحة الـ html العادي. وكيف بإمكاننا أن نقوم بجعل الصفحة تفاعلية قدر الإمكان.
-      </p>
-      <div id="more3" class="collapse">
-test text text
-      </div>
-    </a>
-  </div>
-
-  <div class="list-group">
-    <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more4" >
-      <h4 class="list-group-item-heading">المرحلة المتقدمة من html 2</h4>
-      <p class="list-group-item-text">
-      بعد ما تعرفت على ألية عمل الويب في الكورسات الماضي، حان الوقت للإحتراف في الـ html والتعمق بشكل كامل بها، هنا ستتعلم بقية الأمور المتعلقة بالـ Html . تحديات جديدة بإنتظارك، فهل أنت مستعد لها؟
-      </p>
-      <div id="more4" class="collapse">
-        <p>
-          test test showing up
+  <%# if @courses.length == 4 %>
+    <a href="/courses" class="pull-left btn btn-sm btn-primary btn-more">المزيد</a>
+  <%# end %>
+  <!-- <div class="col-md-6 col-md-offset-3">
+    <div class="list-group">
+      <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more1" >
+        <h4 class="list-group-item-heading">أساسيات الويب HTML 1</h4>
+        <p class="list-group-item-text">
+        هنا ستكون أول خطواتك في عالم برمجة الويب، في هذا الكورس ستتعرف على طريقة عمل الإنترنت بشكل عامل، وطريقة عمل المتصفح مع بعض المعلومات الاولية عن الـ css, html, Javascript وستبدأ بعض التحديات الرائعة عن الـ HTML لتقوم بإنشاء أول صفحة ويب لك.
         </p>
+        <div id="more1" class="collapse">
+          test text text
+        </div>
+      </a>
+    </div>
+
+    <div class="list-group">
+      <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more2" >
+        <h4 class="list-group-item-heading">أساسيات الويب CSS 1</h4>
+        <p class="list-group-item-text">
+        بعد ما قمت بإضافة المحتوى إلى صفحتك الـ HTML الخاص بك في الكورس السابق، حان الوقت لإضافة بعض الألوان والمؤثرات المرئية الأخرى، لإضافة صورة جمالية للصفحة الويب الخاص بك، تحديثات قوية بإنتظارك في الكورس الثاني من أساسيات الويب.
+        </p>
+      <div id="more2" class="collapse">
+        test text text
       </div>
     </a>
-  </div>
-</div>
+
+    </div>
+
+    <div class="list-group">
+      <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more3" >
+        <h4 class="list-group-item-heading">أساسيات الويب JavaScript </h4>
+        <p class="list-group-item-text">
+        ما رأيك بإضافة بعد المرثرات والحركات الخفيفة للصفحتنا،  هنا في هذا الكورس سنتعلم كيف بإمكاننا أن نقوم بإضافة بعض الحركات والروح لصفحة الـ html العادي. وكيف بإمكاننا أن نقوم بجعل الصفحة تفاعلية قدر الإمكان.
+        </p>
+        <div id="more3" class="collapse">
+          test text text
+        </div>
+      </a>
+    </div>
+
+    <div class="list-group">
+      <a href="#demo" onclick="return false;" class="list-group-item " data-toggle="collapse" data-target="#more4" >
+        <h4 class="list-group-item-heading">المرحلة المتقدمة من html 2</h4>
+        <p class="list-group-item-text">
+        بعد ما تعرفت على ألية عمل الويب في الكورسات الماضي، حان الوقت للإحتراف في الـ html والتعمق بشكل كامل بها، هنا ستتعلم بقية الأمور المتعلقة بالـ Html . تحديات جديدة بإنتظارك، فهل أنت مستعد لها؟
+        </p>
+        <div id="more4" class="collapse">
+          <p>
+            test test showing up
+          </p>
+        </div>
+      </a>
+    </div>
+  </div> -->
 </div>
 
 
