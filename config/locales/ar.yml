@@ -40,10 +40,10 @@ ar:
   chapters:
     list: الفصول
   courses:
-    list: الكورسات المتاحة
+    list: الدورات المتاحة
     my_courses: دوراتي
     other_courses: دورات أخرى
-    user_courses: كورسات المستخدم
+    user_courses: دورات المستخدم
   errors:
     messages:
       blank: فارغ، يرجى ملء الحقل
