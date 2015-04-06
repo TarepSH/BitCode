@@ -33,9 +33,11 @@ en:
     user_courses: User courses
   general:
     are_you_sure: Are you sure?
+    close: Close
   profile:
     cancel_account: Cancel my account
     edit: Edit Profile
+    edit_photo: Edit Profile Photo
     leave_blank: leave blank if you don't want to change it
     unhappy: Unhappy?
     update: Update

@@ -106,9 +106,11 @@ ar:
         zero: 'ليس بالامكان حفظ %{model}: لايوجد أخطاء.'
   general:
     are_you_sure: هل انت متأكد؟
+    close: اغلاق
   profile:
     cancel_account: الغاء حسابي
     edit: تعديل الملف الشخصي
+    edit_photo: تعديل الصورة الشخصية
     leave_blank: اتركه فارغا إذا لم ترد تغييره
     unhappy: غير سعيد؟
     update: تحديث

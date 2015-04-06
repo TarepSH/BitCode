@@ -8,7 +8,41 @@
       <h3><%= @user.name %></h3>
       <p><%= @user.username %></p>
       <p><%= @user.email %></p>
-      <p><%= link_to t('profile.edit'), profile_edit_path %></p>
+      <p>
+        <%= link_to t('profile.edit'), profile_edit_path %>
+        |
+        <a href="#" data-toggle="modal" data-target="#edit_photo_modal">
+          <%= t('profile.edit_photo') %>
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="edit_photo_modal" tabindex="-1" role="dialog" aria-labelledby="editPhotoModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editPhotoModal"><%= t('profile.edit_photo') %></h4>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>
+                    ادخل إلى الرابط التالي
+                    <a href="https://ar.gravatar.com/">https://ar.gravatar.com</a>
+                  </li>
+                  <li>إذا لم يكن لديك حساب قم بانشاء حساب جديد.</li>
+                  <li>قم بتسجيل الدخول.</li>
+                  <li>ادخل إلى صفحة <a href="https://ar.gravatar.com/emails">إدارة الصورة الشخصية</a>.</li>
+                  <li>قم بإضافة صورة جديدة.</li>
+                  <li>اجعل هذه الصورة هي الصورة الخاصة بالبريد الإلكتروني الذي قمت التسجيل به في BitCode.</li>
+                </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><%= t('general.close') %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
     </div>
   </div>
   <hr>
