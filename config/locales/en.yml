@@ -10,6 +10,7 @@ en:
   acount:
     home:
       name: BitCode
+    my_profile: My Profile
     settings: Acount Settings
     sign_in: Sign in
     sign_out: Sign out
@@ -28,4 +29,14 @@ en:
   courses:
     list: Courses List
     my_courses: My Courses
+    other_courses: Other Courses
     user_courses: User courses
+  general:
+    are_you_sure: Are you sure?
+  profile:
+    cancel_account: Cancel my account
+    edit: Edit Profile
+    leave_blank: leave blank if you don't want to change it
+    unhappy: Unhappy?
+    update: Update
+    we_need_your_password: we need your current password to confirm your changes

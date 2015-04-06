@@ -10,6 +10,7 @@ ar:
   acount:
     home:
       name: بت كود
+    my_profile: ملفي الشخصي
     settings: اعدادات الحساب
     sign_in: دخول
     sign_out: تسجيل الخروج
@@ -17,6 +18,7 @@ ar:
   activerecord:
     attributes:
       user:
+        current_password: كلمة المرور الحالية
         email: البريد الإلكتروني
         name: الاسم
         password: كلمة المرور
@@ -40,10 +42,10 @@ ar:
   courses:
     list: الكورسات المتاحة
     my_courses: دوراتي
+    other_courses: دورات أخرى
     user_courses: كورسات المستخدم
   errors:
     messages:
-      not_saved: لم يتم الحفظ
       blank: فارغ، يرجى ملء الحقل
       confirmation: غير متوافق
       empty: فارغ، يرجى ملء الحقل
@@ -58,6 +60,7 @@ ar:
       less_than_or_equal_to: يجب أن يكون أصغر من أو يساوي %{count}
       not_a_number: ليس رقما
       not_an_integer: يجب أن يكون عدداً صحيحاً
+      not_saved: لم يتم الحفظ
       odd: يجب أن يكون فردي
       other_than:
         few: الطول يجب ألاّ يكون %{count} أحرف
@@ -101,3 +104,12 @@ ar:
         other: 'ليس بالامكان حفظ %{model}: %{count} خطأ.'
         two: 'ليس بالامكان حفظ %{model}:  خطئان.'
         zero: 'ليس بالامكان حفظ %{model}: لايوجد أخطاء.'
+  general:
+    are_you_sure: هل انت متأكد؟
+  profile:
+    cancel_account: الغاء حسابي
+    edit: تعديل الملف الشخصي
+    leave_blank: اتركه فارغا إذا لم ترد تغييره
+    unhappy: غير سعيد؟
+    update: تحديث
+    we_need_your_password: نحتاج كلمة المرور الحالية لتأكيد التغييرات

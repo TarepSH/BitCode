@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Noto Kufi Arabic', serif;
+  background-color: #f7f7f7;
 }
 
 body p {
@@ -234,7 +235,8 @@ a {
 
 .signup-form,
 .signin-form,
-.forget-password-form {
+.forget-password-form,
+.edit-profile-form {
   margin: 0;
 }
 

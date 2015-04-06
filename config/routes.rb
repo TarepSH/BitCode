@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users
+  get '/profile' => 'profiles#show'
+  get '/profile/edit' => 'profiles#edit'
+
   root "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

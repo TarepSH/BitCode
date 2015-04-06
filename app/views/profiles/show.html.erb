@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-sm-3">
+      <img src="/assets/default-user.png" alt="User default image" width="100%">
+    </div>
+    <div class="col-md-10 col-sm-9">
+      <br>
+      <h3><%= @user.name %></h3>
+      <p><%= @user.username %></p>
+      <p><%= @user.email %></p>
+      <p><%= link_to t('profile.edit'), profile_edit_path %></p>
+    </div>
+  </div>
+  <hr>
+  <div class="user-courses">
+    <h3><%= t('courses.my_courses') %></h3>
+    <div class="row courses-list">
+      <% @courses.each do |course| %>
+        <%= render '/courses/course_block', course: course %>
+      <% end %>
+    </div>
+  </div>
+  <div class="other-courses">
+    <h3><%= t('courses.other_courses') %></h3>
+    <div class="row courses-list">
+      <% @other_courses.each do |course| %>
+        <%= render '/courses/course_block', course: course %>
+      <% end %>
+    </div>
+  </div>
+</div>
