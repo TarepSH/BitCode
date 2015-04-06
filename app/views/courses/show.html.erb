@@ -4,15 +4,19 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position:  50% 30%;
-
   }
 </style>
 
-<div class=course-header>
+<div class="course-header">
   <div class="container">
     <div class="col-sm-12">
-      <h1><%= @course.name %><h1>
-      <h4><%= @course.desc %></h4>
+      <h1>
+        <%= @course.name %>
+        <% if @course.coming_soon? %>
+          <small><%= t('courses.coming_soon') %></small>
+        <% end %>
+      </h1>
+      <p><%= @course.desc %></p>
       <% if current_user %>
         <br>
 
@@ -24,40 +28,42 @@
           <span class="glyphicon glyphicon-unchecked"></span>&nbsp;أضف إلى كورساتي
         </a>
 
+        <script>
+          function addToMyCourses (course_id) {
+            $.ajax({
+              url: '/courses/' + course_id + '/add_to_courses',
+              type: 'POST',
+              success: function( data ) {
+                if (data.success) {
+                  $('#add_to_courses').hide();
+                  $('#remove_from_courses').show();
+                }
+              }
+            });
+          }
+          function removeFromMyCourses (course_id) {
+            $.ajax({
+              url: '/courses/' + course_id + '/remove_from_courses',
+              type: 'DELETE',
+              success: function(data) {
+                if (data.success) {
+                  $('#remove_from_courses').hide();
+                  $('#add_to_courses').show();
+                }
+              }
+            });
+          }
+        </script>
+
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="container chapters-info">
-  <%= render 'chapters/index' %>
-</div>
+<% if !@course.coming_soon? %>
+  <div class="container chapters-info">
+    <%= render 'chapters/index' %>
+  </div>
+<% end %>
 
 <%= render 'layouts/footer' %>
-
-<script>
-  function addToMyCourses (course_id) {
-    $.ajax({
-      url: '/courses/' + course_id + '/add_to_courses',
-      type: 'POST',
-      success: function( data ) {
-        if (data.success) {
-          $('#add_to_courses').hide();
-          $('#remove_from_courses').show();
-        }
-      }
-    });
-  }
-  function removeFromMyCourses (course_id) {
-    $.ajax({
-      url: '/courses/' + course_id + '/remove_from_courses',
-      type: 'DELETE',
-      success: function(data) {
-        if (data.success) {
-          $('#remove_from_courses').hide();
-          $('#add_to_courses').show();
-        }
-      }
-    });
-  }
-</script>

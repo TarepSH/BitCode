@@ -27,6 +27,7 @@ en:
   chapters:
     list: Chapters List
   courses:
+    coming_soon: Coming Soon
     latest_courses: Latest Courses in BitCode
     list: Courses List
     my_courses: My Courses
