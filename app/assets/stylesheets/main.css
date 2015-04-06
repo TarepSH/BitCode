@@ -1,3 +1,13 @@
+a,
+a:focus,
+a:active {
+  outline: none;
+}
+
+.modal-header .close {
+  float: left;
+}
+
 
 @font-face {
   font-family: 'Noto Kufi Arabic';
@@ -269,8 +279,4 @@ a {
 
 .field_with_errors > input {
   border-color: red;
-}
-
-.modal-header .close {
-  float: left;
 }
