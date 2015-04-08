@@ -68,14 +68,13 @@ class ChallengesController < ApplicationController
     @steps = @challenge.challenge_steps
 
     user_code = params[:tabs][0]["starter_code"]
+    styles = params["challenge"]["styles"]
 
     result = false
     message = ""
 
     @steps.each do |step|
-      puts step.step_text
-      puts params[:tabs][0]["starter_code"]
-      hcm = HtmlCssMatcher.new(step.step_text, user_code)
+      hcm = HtmlCssMatcher.new(step.step_text, user_code, styles)#[{ "h2" => [ {"color" => "rgb(255, 0, 0)"} ] }])
 
       result, message = hcm.run
 

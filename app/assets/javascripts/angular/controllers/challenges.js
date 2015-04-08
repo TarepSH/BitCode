@@ -7,6 +7,8 @@ angular.module('bitCodeApp')
     $scope.code_type = "html";
     $scope.challenges =  [];
 
+    $scope.styles_result = [];
+
     var path = $location.$$absUrl.split('courses')[1]
     var ids_array = path.split('/')
     var course_id = ids_array[1];
@@ -59,6 +61,7 @@ angular.module('bitCodeApp')
       };
       data[token["name"]] = token["value"];
       data["challenge"]["tabs"] = data["tabs"] = $scope.selectedChallenge.tabs;
+      data["challenge"]["styles"] = $scope.styles_result
 
       $http.post('/courses/'+course_id+'/chapters/'+chapter_id+'/challenges/'+$scope.selectedChallenge.id+'/check_validation.json',
         data).then(function (res) {
@@ -106,7 +109,7 @@ angular.module('bitCodeApp')
             }
           }
           else {
-            notificationService.error("\nYour asnwer is incorrect, "+data.message);
+            notificationService.error("\nاجابتك غير صحيحة, "+data.message);
           }
         });
     }

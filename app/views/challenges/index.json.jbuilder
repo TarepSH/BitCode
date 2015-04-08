@@ -9,4 +9,5 @@ json.array!(@challenges) do |challenge|
   json.hints challenge.hints do |hint|
     json.id hint.id
   end
+  json.styles challenge.style_needed
 end

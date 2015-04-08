@@ -59,4 +59,21 @@ class Challenge < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  # Methods
+  # {"h2": ["color", "font-size"]}|{"p": ["color", "background-color"]}
+  def style_needed
+    steps = self.challenge_steps
+    h = Hash.new
+
+    steps.each do |step|
+      /"(.*)" tag has "(.*)" value for "(.*)" attribute/.match (step.step_text) do |res|
+        if !h[res[1]]
+          h[res[1]] = []
+        end
+        h[res[1]].push(res[3])
+      end
+    end
+    h
+  end
+
 end

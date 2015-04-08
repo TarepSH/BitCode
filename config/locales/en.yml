@@ -1,5 +1,11 @@
 en:
   BitCode: BitCode
+  messages:
+    tag_not_exsisted: "%{tag_name} not exsisted"
+    tag_does_not_has_classes: "%{tag_name} dosen't has classes %{classes}"
+    tag_does_not_has_id: "%{tag_name} doesn't has id %{id}"
+    text_not_insise_tag: "no %{text} inside %{tag_name}"
+    tag_attribute_value_not_match: "%{tag_name} %{attribute} is not %{value}"
   account:
     forget_your_password: Forgot your password?
     login: Log in
