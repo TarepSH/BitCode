@@ -46,6 +46,18 @@
     </div>
   </div>
   <hr>
+  <div class="user-badges">
+    <h3><%= t('badges.my_badges') %></h3>
+    <div class="row badges-list">
+      <% @badges.each do |badge| %>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <%= image_tag badge.picture, width: "100%" %>
+          <p><%= badge.name %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <hr>
   <div class="user-courses">
     <h3><%= t('courses.my_courses') %></h3>
     <div class="row courses-list">

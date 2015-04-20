@@ -1,11 +1,5 @@
 en:
   BitCode: BitCode
-  messages:
-    tag_not_exsisted: "%{tag_name} not exsisted"
-    tag_does_not_has_classes: "%{tag_name} dosen't has classes %{classes}"
-    tag_does_not_has_id: "%{tag_name} doesn't has id %{id}"
-    text_not_insise_tag: "no %{text} inside %{tag_name}"
-    tag_attribute_value_not_match: "%{tag_name} %{attribute} is not %{value}"
   account:
     forget_your_password: Forgot your password?
     login: Log in
@@ -21,6 +15,8 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+  badges:
+    my_badges: My Badges
   challenges:
     check_validate: Check Validate
     check_validate_note: You can check your code validation by clicking "Check Validate"
@@ -29,8 +25,8 @@ en:
     see_challenges: See challenges
     you_already_did_it: you earned zero point as you did it before
     you_earned_points: you earned %{points_no} points
-    your_answer_is_correct: Your answer is correct
     your_answer_does_not_saved: Your answer didn't saved, please try again later
+    your_answer_is_correct: Your answer is correct
   chapters:
     list: Chapters List
   courses:
@@ -43,6 +39,12 @@ en:
   general:
     are_you_sure: Are you sure?
     close: Close
+  messages:
+    tag_attribute_value_not_match: '%{tag_name} %{attribute} is not %{value}'
+    tag_does_not_has_classes: '%{tag_name} dosen''t has classes %{classes}'
+    tag_does_not_has_id: '%{tag_name} doesn''t has id %{id}'
+    tag_not_exsisted: '%{tag_name} not exsisted'
+    text_not_insise_tag: no %{text} inside %{tag_name}
   profile:
     cancel_account: Cancel my account
     edit: Edit Profile
