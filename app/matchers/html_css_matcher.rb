@@ -89,7 +89,7 @@ class HtmlCssMatcher
         if (match_result.length > 0)
           return [true]
         else
-          return [false, I18n.t("text_not_insise_tag", text: res[1], tag_name: res[2])]
+          return [false, I18n.t("messages.text_not_inside_tag", text: res[1], tag_name: res[2])]
         end
       else
         return [false, I18n.t("messages.tag_not_exsisted", tag_name: res[1])]
@@ -103,7 +103,7 @@ class HtmlCssMatcher
         if (res[1] == match_result[0].children.text)
           return [true]
         else
-          return [false, I18n.t("text_not_insise_tag", text: res[1], tag_name: res[2])]
+          return [false, I18n.t("messages.text_not_inside_tag", text: res[1], tag_name: res[2])]
         end
       else
         return [false, I18n.t("messages.tag_not_exsisted", tag_name: res[2])]
