@@ -4,7 +4,8 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @chapter = Chapter.find(params[:chapter_id])
+    @challenges = @chapter.challenges
   end
 
   # GET /challenges/1
@@ -67,7 +68,8 @@ class ChallengesController < ApplicationController
     @challenge = @challenges.find_all { |challenge| challenge.id == params[:challenge_id].to_i }.first
     @steps = @challenge.challenge_steps
 
-    user_code = params[:tabs][0]["starter_code"]
+
+    user_code = params[:tabs].select { |tab| tab[:language_name] == "html" }[0]["starter_code"]
     styles = params["challenge"]["styles"]
 
     result = false
