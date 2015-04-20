@@ -45,7 +45,12 @@ angular.module('bitCodeApp')
       if ($scope.selectedChallenge) {
         var finalCode = ""
         for (var i=0; i < $scope.selectedChallenge.tabs.length; i++) {
-          finalCode += "\n\n" + $scope.selectedChallenge.tabs[i].starter_code;
+          if ($scope.selectedChallenge.tabs[i].language_name == 'css') {
+            finalCode += "\n\n<style>" + $scope.selectedChallenge.tabs[i].starter_code + "</style>";
+          }
+          else {
+            finalCode += "\n\n" + $scope.selectedChallenge.tabs[i].starter_code;
+          }
         }
         return finalCode;
       }
