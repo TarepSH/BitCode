@@ -15,7 +15,6 @@ class UserSolution < ActiveRecord::Base
       field :user
       field :challenge
       field :points
-      field :code
     end
   end
 
