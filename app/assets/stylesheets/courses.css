@@ -18,7 +18,8 @@
 }
 
 .user-courses h3,
-.other-courses h3 {
+.other-courses h3,
+.user-badges h3 {
   color: #0F6B75;
   border-bottom: 2px solid;
   padding-bottom: 13px;

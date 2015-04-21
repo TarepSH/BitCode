@@ -4,7 +4,8 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @chapter = Chapter.find(params[:chapter_id])
+    @challenges = @chapter.challenges
   end
 
   # GET /challenges/1
@@ -67,7 +68,8 @@ class ChallengesController < ApplicationController
     @challenge = @challenges.find_all { |challenge| challenge.id == params[:challenge_id].to_i }.first
     @steps = @challenge.challenge_steps
 
-    user_code = params[:tabs][0]["starter_code"]
+
+    user_code = params[:tabs].select { |tab| tab[:language_name] == "html" }[0]["starter_code"]
     styles = params["challenge"]["styles"]
 
     result = false
@@ -91,12 +93,25 @@ class ChallengesController < ApplicationController
           hints_point = current_user.hints.where('hints.challenge_id = ?', @challenge.id).sum(:points)
           new_points = @challenge.points - hints_point
 
-          UserSolution.create!(
-            code: user_code,
+          user_solution = UserSolution.new(
             points: new_points,
             user: current_user, challenge: @challenge
           )
-          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: new_points)}"
+
+          tabs = params[:tabs]
+          tabs.each do |tab|
+            user_solution.user_solution_tabs << UserSolutionTab.new(
+              code: tab["starter_code"],
+              name: tab["name"],
+              language_name: tab["language_name"]
+            )
+          end
+
+          if (user_solution.save)
+            message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: new_points)}"
+          else
+            message = "#{t('challenges.your_answer_does_not_saved')}"
+          end
         end
 
         if (@challenges.last.id == @challenge.id)

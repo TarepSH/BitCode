@@ -1,19 +1,5 @@
 ar:
   BitCode: بت كود
-  messages:
-    tag_not_exsisted: "الوسم %{tag_name} غير موجود"
-    tag_does_not_has_classes: "الوسم %{tag_name} لا يملك الصفوف (classes) %{classes}"
-    tag_does_not_has_id: "الوسم %{tag_name} ليس له المعرف (id) %{id}"
-    text_not_insise_tag: "لا يوجد %{text} داخل وسم %{tag_name}"
-    tag_attribute_value_not_match: "%{attribute} الوسم %{tag_name} ليس %{value}"
-  css:
-    color: لون
-    font-size: حجم خط
-    text-decoration: ديكور نص
-  css_value:
-    underline: تحته خط
-    rgb(255, 0, 0): احمر
-    20px: 20px
   account:
     forget_your_password: نسيت كلمة المرور؟
     login: تسجيل الدخول
@@ -43,6 +29,8 @@ ar:
       user:
         one: المستخدم
         other: المستخدمون
+  badges:
+    my_badges: شاراتي
   challenges:
     check_validate: تحقق
     check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
@@ -50,6 +38,7 @@ ar:
     see_challenges: شاهد التحديات
     you_already_did_it: لم حصلت على اي نقطة لانك قمت بهذا التحدي سابقا
     you_earned_points: ربحت %{points_no} نقطة
+    your_answer_does_not_saved: لم يتم حفظ اجابتك، رجاء حاول مرة أخرى
     your_answer_is_correct: اجابتك صحيحة
   chapters:
     list: الفصول
@@ -60,6 +49,14 @@ ar:
     my_courses: دوراتي
     other_courses: دورات أخرى
     user_courses: دورات المستخدم
+  css:
+    color: لون
+    font-size: حجم خط
+    text-decoration: ديكور نص
+  css_value:
+    20px: 20px
+    rgb(255, 0, 0): احمر
+    underline: تحته خط
   errors:
     messages:
       blank: فارغ، يرجى ملء الحقل
@@ -123,6 +120,12 @@ ar:
   general:
     are_you_sure: هل انت متأكد؟
     close: اغلاق
+  messages:
+    tag_attribute_value_not_match: '%{attribute} الوسم %{tag_name} ليس %{value}'
+    tag_does_not_has_classes: الوسم %{tag_name} لا يملك الصفوف (classes) %{classes}
+    tag_does_not_has_id: الوسم %{tag_name} ليس له المعرف (id) %{id}
+    tag_not_exsisted: الوسم %{tag_name} غير موجود
+    text_not_inside_tag: لا يوجد %{text} داخل وسم %{tag_name}
   profile:
     cancel_account: الغاء حسابي
     edit: تعديل الملف الشخصي

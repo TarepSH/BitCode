@@ -2,3 +2,14 @@
   width: 100%;
   margin-top: 20px;
 }
+
+.user-badges img {
+  padding: 10px;
+}
+
+.user-badges > .badges-list > * {
+  text-align: center;
+  background-color: white;
+  border: 1px solid #f1f1f1;
+  margin: 10px;
+}

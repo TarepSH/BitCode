@@ -1,12 +1,12 @@
 class UserSolution < ActiveRecord::Base
 
   # Validates
-  validates :code, :presence => true
   validates :points, :presence => true
 
   # Relations
   belongs_to :challenge
   belongs_to :user
+  has_many :user_solution_tabs
 
   # RailsAdmin
   rails_admin do
@@ -15,7 +15,6 @@ class UserSolution < ActiveRecord::Base
       field :user
       field :challenge
       field :points
-      field :code
     end
   end
 

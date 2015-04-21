@@ -35,6 +35,10 @@
   position: relative;
 }
 
+.challenges-list > li > a > h3 {
+  font-style: 20px;
+}
+
 .challenges-list > li > a > .label {
   position: absolute;
   top: 20px;
