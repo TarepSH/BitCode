@@ -7,7 +7,7 @@
   text-align: center;
   padding-top: 150px;
   min-height: 500px;
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/assets/background.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), image-url("background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -58,7 +58,7 @@
 .home-singup {
   text-align: center;
   min-height: 200px;
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/assets/background.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), image-url("background.jpg");
   background-repeat: no-repeat;
   background-position: 50% 55%;
 }
