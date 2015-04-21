@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 20150402124114) do
     t.datetime "logo_updated_at"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.string   "slug"
     t.boolean  "published",          default: false
     t.boolean  "coming_soon",        default: true
-    t.string   "slug"
     t.boolean  "is_free",            default: true
     t.string   "cover_file_name"
     t.integer  "cover_file_size"
@@ -147,5 +147,6 @@ ActiveRecord::Schema.define(version: 20150402124114) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
 
 end
