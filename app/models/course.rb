@@ -70,8 +70,8 @@ class Course < ActiveRecord::Base
       file_object = logo.queued_for_write[:original]
 
       unless file_object.blank?
-        required_width  = 1200
-        required_height = 1200
+        required_width  = 489
+        required_height = 489
         dimensions = Paperclip::Geometry.from_file(file_object.path)
 
         errors.add(:logo, "dimensions must be #{required_width}x#{required_height}") unless dimensions.width == required_width && dimensions.height == required_height
