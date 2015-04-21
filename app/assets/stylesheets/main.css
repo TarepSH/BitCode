@@ -11,7 +11,7 @@ a:active {
 
 @font-face {
   font-family: 'Noto Kufi Arabic';
-  src: url("NotoKufiArabic-Regular.ttf");
+  src: url("/fonts/NotoKufiArabic-Regular.ttf");
 }
 
 body {
