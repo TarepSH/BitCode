@@ -26,3 +26,7 @@ public/system/*
 
 # Todos files
 *.TODO
+
+
+public/assets/
+config/initializers/devise.rb
