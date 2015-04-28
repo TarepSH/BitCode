@@ -3,18 +3,19 @@ class Chapter < ActiveRecord::Base
 
   # Validates
   validates :title, :presence => true
+  validates :youtube_url, :presence => true
 
-  validates :video, :attachment_presence => true
+  # validates :video, :attachment_presence => true
 
-  validates_with AttachmentPresenceValidator, :attributes => :video
+  # validates_with AttachmentPresenceValidator, :attributes => :video
 
-  validates_attachment :video, :presence => true,
-    :content_type => {
-      :content_type => [
-        "video/mp4",
-        "video/ogg"
-      ]
-    }
+  # validates_attachment :video, :presence => true,
+  #   :content_type => {
+  #     :content_type => [
+  #       "video/mp4",
+  #       "video/ogg"
+  #     ]
+  #   }
 
   # Relations
   belongs_to :course
@@ -27,7 +28,7 @@ class Chapter < ActiveRecord::Base
       field :id
       field :title
       field :desc
-      field :video
+      field :youtube_url
       field :course
     end
   end
