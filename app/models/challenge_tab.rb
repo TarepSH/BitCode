@@ -9,6 +9,12 @@ class ChallengeTab < ActiveRecord::Base
 
   # RailsAdmin
   rails_admin do
-    visible false
+    list do
+      field :id
+      field :name
+      field :language_name
+      field :starter_code
+      field :challenge
+    end
   end
 end
