@@ -30,3 +30,6 @@ public/system/*
 
 public/assets/
 config/initializers/devise.rb
+
+
+config/environments/production.rb
