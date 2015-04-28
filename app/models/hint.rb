@@ -10,6 +10,12 @@ class Hint < ActiveRecord::Base
 
   # RailsAdmin
   rails_admin do
-    visible false
+    list do
+      field :id
+      field :title
+      field :desc
+      field :points
+      field :challenge
+    end
   end
 end
