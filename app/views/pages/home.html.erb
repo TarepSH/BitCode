@@ -1,11 +1,11 @@
 <div class=home-cover>
   <div class="container">
     <div class="col-sm-12">
-      <h2>تعلم المهارات التي تحتاجها لتنطق في عالم برمجة الويب <br>
+      <h2>تعلم المهارات التي تحتاجها لتنطلق في عالم برمجة الويب <br>
       بطريقة تفاعلية، وباللغة العربية!
       </h2>
       <br>
-      <p> <%= link_to "أبداً الرحلة الآن", courses_path, :class => "btn btn-primary btn-lg"%> <%= link_to "شاهد الفيديو", root_path, :class => "btn btn-primary btn-lg"%></p>
+      <p> <%= link_to "أبدأ الرحلة الآن", courses_path, :class => "btn btn-primary btn-lg"%> <p>
     </div>
   </div>
 </div>
@@ -38,7 +38,7 @@
 
             <div class="panel-body">
               <h4>تعلم بالعربية!</h4>
-              <p>إن المحتوى الموجود في BitCode متوفر باللغة العربية، لا توجد حاجة أبداً لتعلمك الإنكليزية لتبدأ رحلة التعلم على الـ BitCode.</p>
+              <p>إن المحتوى الموجود في BitCode متوفر باللغة العربية، لا توجد حاجة أبداً لتعلمك الإنكليزية لتبدأ رحلة التعلم في BitCode.</p>
             </div>
         </div>
     </div>
@@ -78,14 +78,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-sm-6 text-left">
-      <img src="http://www.codeavengers.com/images/home/screen-vector.png" alt="" />
-
+      <%= image_tag("coding-html.png") %>
     </div>
 
     <div class="col-md-6 col-sm-6 content-text">
       <h2>تعلم البرمجة بالشكل الصحيح</h2>
       <p>
-هنا في BitCode ستقوم بتعلم البرمجة بشكل عملي من خلال كتابة الكود بشكل مباشر على المتصفح. لن تجد أمثلة طويلة مملة، أو مقاطع مرئية طويلة ومعقدة، بل ستجد تحديات ممتعة بتتنرك لحلها.      </p>
+هنا في BitCode ستقوم بتعلم البرمجة بشكل عملي من خلال كتابة الكود بشكل مباشر على المتصفح. لن تجد أمثلة طويلة مملة، أو مقاطع مرئية طويلة ومعقدة، بل ستجد تحديات ممتعة تنتظرك لتقوم بحلها.      </p>
     </div>
   </div>
 
@@ -93,12 +92,12 @@
 
   <div class="row">
     <div class="col-md-6 col-sm-6 content-text">
-<h2>لن تحتاج إلى أكثر من 12 ساعة لإنتهاء من الكورس</h2>
+<h2>لن تحتاج إلى أكثر من 12 ساعة للإنتهاء من الكورس</h2>
  <p>
-لن تحتاج إلى أكثر من 12 ساعة لتقوم بالإنتهاء من تعلم أحد الكورسات على الـ BitCode. حيث قمنا بتصميم الكورسات وإنتاج المحتوى بشكل سلسل وبسيط وغير معقد بحيث يساعد المستخدم من الإنتهاء من الكورس بأسرع وقت ممكن ع حصوله على كامل المعلومات التي يحتاجها امستخدم.     </div>
+لن تحتاج إلى أكثر من 12 ساعة لتقوم بالإنتهاء من تعلم أحد الكورسات على الـ BitCode. حيث قمنا بتصميم الكورسات وإنتاج المحتوى بشكل سلسل وبسيط وغير معقد بحيث يساعد المستخدم من الإنتهاء من الكورس بأسرع وقت ممكن مع ضمان حصوله على كامل محتوى الكورس بشكل جيد.     </div>
 
     <div class="col-md-6 col-sm-6 text-right ">
-      <img src="http://www.codeavengers.com/images/home/course-timing.png" alt="" />
+      <%= image_tag("battery-charging.png") %>
     </div>
   </div>
 
@@ -106,14 +105,14 @@
   <div class="row">
 
   <div class="col-md-6 col-sm-6 text-left">
-    <img src="http://www.codeavengers.com/images/home/app-icons-vector.png" alt="" />
+      <%= image_tag("checklist.png") %>
 
   </div>
 
   <div class="col-md-6 col-sm-6 content-text">
     <h2>ستقوم بالتعلم بالعربية!</h2>
     <p>
-نحن جداً فخورين في BitCode بتقدم محتوى عربي رائع وإحترافي للنساعدك في تعلم برمجة تطبيقات الويب... كل المحتوى الموجود حالياً في BitCode والمحتوى الذي سيضاف في المستقبل سيكون باللغة العربية الفصحة.
+نحن جداً فخورين في BitCode بتقدم محتوى عربي رائع وإحترافي لنساعدك في تعلم برمجة تطبيقات الويب... كل المحتوى الموجود حالياً في BitCode والمحتوى الذي سيضاف في المستقبل سيكون باللغة العربية.
 </p>
   </div>
 
@@ -126,7 +125,7 @@
   <div class="container">
     <div class="col-sm-12">
       <h2>سجل الآن في BitCode وأبدأ رحلتك في تعلم برمجة تطبيقات الويب بالعربية، ومجاناً!</h2>
-      <p> <%= link_to "أبداً الرحلة الآن", courses_path, :class => "btn btn-primary btn-lg"%></p>
+      <p> <%= link_to "أبدأ الرحلة الآن", courses_path, :class => "btn btn-primary btn-lg"%></p>
 
     </div>
   </div>
