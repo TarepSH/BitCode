@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //= require ./src-min-noconflict/ace.js
+//= require ./src-min-noconflict/theme-vibrant_ink.js
+//= require ./src-min-noconflict/mode-html.js
+//= require ./src-min-noconflict/mode-css.js
 //= require ./angular-lib.js
 //= require ./ui-ace.js
 //= require ./json3.js
