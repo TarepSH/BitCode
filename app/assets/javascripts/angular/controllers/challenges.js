@@ -79,7 +79,7 @@ angular.module('bitCodeApp')
               if (data.next_chapter_id == null) {
                 notificationAlert.confirm(
                   "تهانينا",
-                  "تهانينا، لقد انهيت هذا الكورس بنجاح!",
+                  "تهانينا، لقد انهيت هذه الدورة بنجاح!",
                   [
                     {
                       text: 'استمرار',
