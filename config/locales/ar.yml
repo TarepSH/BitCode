@@ -43,6 +43,7 @@ ar:
   chapters:
     list: الفصول
   courses:
+    plural: الدورات
     coming_soon: قريباً
     latest_courses: أحدث الدورات التعليمية في بت كود
     list: الدورات المتاحة

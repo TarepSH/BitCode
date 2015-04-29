@@ -21,11 +21,11 @@
         <br>
 
         <a href="#" id="remove_from_courses" style="<%= !@user_course ? 'display:none' : '' %>" onclick="removeFromMyCourses(<%= @course.id %>)" class="btn btn-lg btn-success">
-          <span class="glyphicon glyphicon-check"></span>&nbsp;أحذف من كورساتي
+          <span class="glyphicon glyphicon-check"></span>&nbsp;أحذف من دوراتي
         </a>
 
         <a href="#" id="add_to_courses" style="<%= @user_course ? 'display:none' : '' %>" onclick="addToMyCourses(<%= @course.id %>)" class="btn btn-lg btn-default">
-          <span class="glyphicon glyphicon-unchecked"></span>&nbsp;أضف إلى كورساتي
+          <span class="glyphicon glyphicon-unchecked"></span>&nbsp;أضف إلى دوراتي
         </a>
 
         <script>
