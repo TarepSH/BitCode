@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get '/content-us' => 'pages#contentus'
+  get '/about-us' => 'pages#aboutus'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
