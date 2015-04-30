@@ -9,7 +9,7 @@
       <ul class="challenges-list">
         <li ng-repeat="challenge in challenges" class="challenge_item" ng-class="{'active': selectedChallenge == challenge}">
           <a href="#" ng-click="selectChallenge(challenge)">
-            <span class="label label-success" alt="hint" ng-click="getHint(challenge)">{{challenge.hints_number}}</span>
+            <span class="label label-success" alt="hint" ng-click="getHint(challenge)">مساعدة ({{challenge.hints_number}})</span>
             <h3>{{ challenge.name }}</h3>
             <p>{{ challenge.desc }}</p>
             <ul class="hints" ng-if="challenge.queriedHints">
@@ -58,7 +58,12 @@
 <input type="hidden" id="refresh" value="no">
 <script>
   $(document).ready(function(e) {
-    if ($("#refresh").val() == 'yes') { location.reload();}
-    else { $('#refresh').val('yes'); }
+    if ($("#refresh").val() == 'yes') {
+      $('#refresh').val('no');
+      location.reload();
+    }
+    else {
+      $('#refresh').val('yes');
+    }
   });
 </script>
