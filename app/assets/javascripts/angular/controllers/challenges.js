@@ -95,7 +95,7 @@ angular.module('bitCodeApp')
               else {
                 notificationAlert.confirm(
                   "مبارك!، لقد انهيت هذا الفصل بنجاح",
-                  "انتقل إلى الى صفحة الفصول؟",
+                  "انتقل إلى الى الفصل التالي؟",
                   [
                     {
                       text: 'نعم',
