@@ -4,9 +4,9 @@ class PagesController < ApplicationController
     @courses = Course.limit(4)
   end
 
-  def contentus
+  def contact_us
   end
 
-  def aboutus
+  def about_us
   end
 end

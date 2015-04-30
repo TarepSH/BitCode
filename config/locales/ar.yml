@@ -43,12 +43,12 @@ ar:
   chapters:
     list: الفصول
   courses:
-    plural: الدورات
     coming_soon: قريباً
     latest_courses: أحدث الدورات التعليمية في بت كود
     list: الدورات المتاحة
     my_courses: دوراتي
     other_courses: دورات أخرى
+    plural: الدورات
     user_courses: دورات المستخدم
   css:
     color: لون
@@ -121,6 +121,7 @@ ar:
   general:
     are_you_sure: هل انت متأكد؟
     close: اغلاق
+    contact_us: اتصل بنا
   messages:
     tag_attribute_value_not_match: '%{attribute} الوسم %{tag_name} ليس %{value}'
     tag_does_not_has_classes: الوسم %{tag_name} لا يملك الصفوف (classes) %{classes}

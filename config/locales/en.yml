@@ -39,6 +39,7 @@ en:
   general:
     are_you_sure: Are you sure?
     close: Close
+    contact_us: Contact us
   messages:
     tag_attribute_value_not_match: '%{tag_name} %{attribute} is not %{value}'
     tag_does_not_has_classes: '%{tag_name} dosen''t has classes %{classes}'
