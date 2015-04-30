@@ -6,7 +6,7 @@ ContactUs.setup do |config|
   # Configure the e-mail address which email notifications should be sent from.  If emails must be sent from a verified email address you may set it here.
   # Example:
   # config.mailer_from = "contact@please-change-me.com"
-  config.mailer_from = "do-not-reply@bit-code.net"
+  config.mailer_from = "info@bit-code.net"
 
   # Configure the e-mail address which should receive the contact form email notifications.
   config.mailer_to = "info@bit-code.net"
