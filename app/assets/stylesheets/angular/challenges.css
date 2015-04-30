@@ -44,9 +44,9 @@
 
 .challenges-list > li > a > .label {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 10px;
-  font-size: 18px;
+  font-size: 12px;
   z-index: 10;
   display: none;
 }
