@@ -29,6 +29,13 @@ en:
     your_answer_is_correct: Your answer is correct
   chapters:
     list: Chapters List
+  contact_us:
+    email: Email
+    message: Message
+    name: Name
+    send: Send
+    sent_by_name: Sent by %{name} (%{email})
+    subject: Subject
   courses:
     coming_soon: Coming Soon
     latest_courses: Latest Courses in BitCode

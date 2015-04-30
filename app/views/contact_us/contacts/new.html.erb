@@ -1,0 +1,78 @@
+<div class="container contact-us">
+  <% if notice && !notice.empty? %>
+    <div class="alert alert-success alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <h2><%= t('general.contact_us') %></h2>
+  <div class="row">
+    <div class="col-md-8">
+      <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+        <% if ContactUs.require_name %>
+          <div class='string required' id='contact_us_contact_name_input'>
+            <%= f.label :name, (t('contact_us.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+            <%= f.text_field :name, class: "form-control" %>
+            <% if f.object.errors[:name].present? %>
+              <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
+        <div class='string required' id='contact_us_contact_email_input'>
+          <%= f.label :email, (t('contact_us.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.text_field :email, class: "form-control" %>
+          <% if f.object.errors[:email].present? %>
+            <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+          <% end %>
+        </div>
+        <br>
+        <% if ContactUs.require_subject %>
+          <div class='string required' id='contact_us_contact_subject_input'>
+            <%= f.label :subject, (t('contact_us.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+            <%= f.text_field :subject, class: "form-control" %>
+            <% if f.object.errors[:subject].present? %>
+              <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
+        <div class='text required' id='contact_us_contact_message_input'>
+          <%= f.label :message, (t('contact_us.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.text_area :message, class: 'form-control', rows: "5" %>
+          <% if f.object.errors[:message].present? %>
+            <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+          <% end %>
+        </div>
+        <br>
+        <div class='commit'>
+          <%= f.submit :submit, :class => 'submit create btn btn-success', :title => t('contact_us.send'), :value => t('contact_us.send') %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4 more-contact-info">
+      <p>
+        سوريا، دمشق، برامكة، المنطقة الحرة.<br>
+      </p>
+      <p><i class="fa fa-phone"></i>
+        <abbr title="Phone"></abbr>: <span dir="ltr">+963 (0) 962412986</span></p>
+      <p><i class="fa fa-envelope-o"></i>
+        <abbr title="Email"></abbr>: <a href="mailto:info@bit-code.net">info@bit-code.net</a>
+      </p>
+
+      <ul class="list-unstyled list-inline list-social-icons">
+        <li>
+          <a href="https://facebook.com/BitCodeAR"><i class="fa fa-facebook-square fa-2x"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/BitCodeAR"><i class="fa fa-twitter-square fa-2x"></i></a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCe2UbCAARD1ftAIbSsVhaYg"><i class="fa fa-youtube-square fa-2x"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/footer' %>

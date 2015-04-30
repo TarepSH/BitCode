@@ -42,6 +42,15 @@ ar:
     your_answer_is_correct: اجابتك صحيحة
   chapters:
     list: الفصول
+  contact_us:
+    email: البريد الإلكتروني
+    message: نص الرسالة
+    name: الاسم
+    send: ارسل الرسالة
+    sent_by_name: ارسلت من قبل %{name} (%{email})
+    subject: عنوان الرسالة
+    notices:
+      success: تم ارسال الرسالة بنجاح
   courses:
     coming_soon: قريباً
     latest_courses: أحدث الدورات التعليمية في بت كود

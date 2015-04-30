@@ -48,6 +48,9 @@ gem 'friendly_id'
 # Nokogiri gem to search into HTML
 gem 'nokogiri'
 
+# ContactUs gem provid a basic contact form
+gem 'contact_us', '~> 1.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

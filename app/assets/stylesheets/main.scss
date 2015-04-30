@@ -166,6 +166,21 @@ a {
   }
 }
 
+.alert {
+  position: relative;
+}
+
+.alert-dismissable, .alert-dismissible {
+  padding-right: 15px;
+  padding-left: 35px;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+}
+
 .signup-navbar {
   border: 1px solid;
   border-radius: 4px;
@@ -257,6 +272,24 @@ a {
 
 .btn-more:before {
   content: '» ';
+}
+
+.contact-us {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.contact-us .more-contact-info {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.contact-us .more-contact-info .list-social-icons {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /*FORM Errors*/

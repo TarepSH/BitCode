@@ -1,0 +1,6 @@
+<div dir="rtl" style="direction: rtl;">
+  <%= @contact.message %>
+
+  -------------------------------------
+  <%= ContactUs.require_name ? t('contact_us.sent_by_name', :email => @contact.email, :name => @contact.name) : t('.sent_by_contact_form', :email => @contact.email) %>
+</div>

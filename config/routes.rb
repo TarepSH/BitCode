@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get '/contact-us' => 'pages#contact_us'
+  # get '/contact-us' => 'pages#contact_us'
   get '/about-us' => 'pages#about_us'
 
 
