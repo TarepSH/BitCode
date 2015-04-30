@@ -43,7 +43,8 @@
   transition: all .1s ease;
 }
 
-.course-block:hover {
+.course-block:hover,
+.course-block:focus {
   text-decoration: none;
   box-shadow: 0 0 7px -2px lightgray;
 }
