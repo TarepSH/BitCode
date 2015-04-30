@@ -83,7 +83,7 @@ angular.module('bitCodeApp')
                   [
                     {
                       text: 'استمرار',
-                      href: "/courses/" + course_id + "/chapters"
+                      href: "/courses"
                     },
                     {
                       text: 'بقاء'
