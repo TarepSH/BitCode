@@ -175,8 +175,10 @@ class ChallengesController < ApplicationController
     @hint = Hint.find(params[:hint_id])
 
     if (@hint)
-      if (!current_user.hints.include?(@hint))
-        current_user.hints << @hint
+      if (user_signed_in?)
+        if (!current_user.hints.include?(@hint))
+          current_user.hints << @hint
+        end
       end
       respond_to do |format|
         format.json { render json: @hint }
@@ -189,8 +191,10 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if (@hint)
-        if (!current_user.hints.include?(@hint))
-          current_user.hints << @hint
+        if (user_signed_in?)
+          if (!current_user.hints.include?(@hint))
+            current_user.hints << @hint
+          end
         end
         format.json { render json: @hint }
       else
