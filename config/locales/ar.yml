@@ -36,7 +36,8 @@ ar:
     check_validate_note: يمكنك التحقق من الكود الخاص بك عن طريق الضغط على زر "تحقق"
     list: التحديات
     see_challenges: شاهد التحديات
-    you_already_did_it: لم حصلت على اي نقطة لانك قمت بهذا التحدي سابقا
+    you_are_not_signed_in: لم تحصل على اي نقطة قم بتسجيل الدخول واجمع النقاط
+    you_already_did_it: لم تحصل على اي نقطة لانك قمت بهذا التحدي سابقا
     you_earned_points: ربحت %{points_no} نقطة
     your_answer_does_not_saved: لم يتم حفظ اجابتك، رجاء حاول مرة أخرى
     your_answer_is_correct: اجابتك صحيحة

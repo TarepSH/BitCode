@@ -83,55 +83,79 @@ class ChallengesController < ApplicationController
       break if (!result)
     end
 
+
     respond_to do |format|
-      if (result)
-        user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id).first
-        message = ""
-        if (user_solution)
-          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"
-        else
-          hints_point = current_user.hints.where('hints.challenge_id = ?', @challenge.id).sum(:points)
-          new_points = @challenge.points - hints_point
-
-          user_solution = UserSolution.new(
-            points: new_points,
-            user: current_user, challenge: @challenge
-          )
-
-          tabs = params[:tabs]
-          tabs.each do |tab|
-            user_solution.user_solution_tabs << UserSolutionTab.new(
-              code: tab["starter_code"],
-              name: tab["name"],
-              language_name: tab["language_name"]
-            )
-          end
-
-          if (user_solution.save)
-            message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: new_points)}"
+      if (user_signed_in?)
+        if (result)
+          user_solution = UserSolution.where(user_id: current_user.id, challenge_id: @challenge.id).first
+          message = ""
+          if (user_solution)
+            message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_already_did_it')}"
           else
-            message = "#{t('challenges.your_answer_does_not_saved')}"
-          end
-        end
+            hints_point = current_user.hints.where('hints.challenge_id = ?', @challenge.id).sum(:points)
+            new_points = @challenge.points - hints_point
 
-        if (@challenges.last.id == @challenge.id)
-          user_solutions = UserSolution.where('user_id = ? AND challenge_id IN (?)',
-            current_user.id,
-            @challenges.map { |challenge| challenge.id }
-          )
+            user_solution = UserSolution.new(
+              points: new_points,
+              user: current_user, challenge: @challenge
+            )
 
-          user_points = user_solutions.sum(:points)
-          badges = current_user.badges
-          chapter_badges = @chapter.badges.where('points <= ?', user_points)
-          new_badges = []
+            tabs = params[:tabs]
+            tabs.each do |tab|
+              user_solution.user_solution_tabs << UserSolutionTab.new(
+                code: tab["starter_code"],
+                name: tab["name"],
+                language_name: tab["language_name"]
+              )
+            end
 
-          chapter_badges.each do |badge|
-            if (!badges.include?(badge))
-              new_badges << badge
+            if (user_solution.save)
+              message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_earned_points', points_no: new_points)}"
+            else
+              message = "#{t('challenges.your_answer_does_not_saved')}"
             end
           end
 
-          current_user.badges << new_badges
+          if (@challenges.last.id == @challenge.id)
+            user_solutions = UserSolution.where('user_id = ? AND challenge_id IN (?)',
+              current_user.id,
+              @challenges.map { |challenge| challenge.id }
+            )
+
+            user_points = user_solutions.sum(:points)
+            badges = current_user.badges
+            chapter_badges = @chapter.badges.where('points <= ?', user_points)
+            new_badges = []
+
+            chapter_badges.each do |badge|
+              if (!badges.include?(badge))
+                new_badges << badge
+              end
+            end
+
+            current_user.badges << new_badges
+
+            next_chapter = @chapter.next
+            format.json { render json: {
+                success: true,
+                message: message,
+                next_chapter_id: next_chapter ? next_chapter.id : nil
+              }
+            }
+          else
+            format.json { render json: {
+                success: true,
+                message: message,
+                next_chapter_id: 0
+              }
+            }
+          end
+        else
+          format.json { render json: {success: false, message: message} }
+        end
+      else
+        if (result)
+          message = "#{t('challenges.your_answer_is_correct')}, #{t('challenges.you_are_not_signed_in')}"
 
           next_chapter = @chapter.next
           format.json { render json: {
@@ -141,15 +165,8 @@ class ChallengesController < ApplicationController
             }
           }
         else
-          format.json { render json: {
-              success: true,
-              message: message,
-              next_chapter_id: 0
-            }
-          }
+          format.json { render json: {success: false, message: message} }
         end
-      else
-        format.json { render json: {success: false, message: message} }
       end
     end
   end
