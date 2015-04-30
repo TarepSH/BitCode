@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def contentus
   end
+
+  def aboutus
+  end
 end
