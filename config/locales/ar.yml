@@ -138,6 +138,8 @@ ar:
     tag_does_not_has_id: الوسم %{tag_name} ليس له المعرف (id) %{id}
     tag_not_exsisted: الوسم %{tag_name} غير موجود
     text_not_inside_tag: لا يوجد %{text} داخل وسم %{tag_name}
+    you_are_not_authorized_visitor: ليس لديك الصلاحية لمشاهدة الصفحة، قم بتسجيل الدخول أولا
+    you_are_not_authorized: ليس لديك الصلاحية لمشاهدة الصفحة
   profile:
     cancel_account: الغاء حسابي
     edit: تعديل الملف الشخصي
