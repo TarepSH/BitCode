@@ -10,6 +10,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    authorize! :show, @chapter, :message => t("messages.you_are_not_authorize_visitor")
   end
 
   # GET /chapters/new
