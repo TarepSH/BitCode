@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_local
 
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   protected
 
   def configure_permitted_parameters

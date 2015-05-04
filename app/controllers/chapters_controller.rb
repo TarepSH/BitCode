@@ -12,6 +12,9 @@ class ChaptersController < ApplicationController
   # GET /chapters/1.json
   def show
     authorize! :show, @chapter, :message => t("messages.you_are_not_authorized_visitor")
+
+  rescue CanCan::AccessDenied
+    redirect_to '/users/sign_in'
   end
 
   # GET /chapters/new

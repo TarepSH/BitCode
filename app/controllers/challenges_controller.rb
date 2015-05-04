@@ -7,12 +7,15 @@ class ChallengesController < ApplicationController
     @chapter = Chapter.find(params[:chapter_id])
     @challenges = @chapter.challenges
     authorize! :show, @chapter, :message => t("messages.you_are_not_authorized_visitor")
+
+  rescue CanCan::AccessDenied
+    redirect_to '/users/sign_in'
   end
 
   # GET /challenges/1
   # GET /challenges/1.json
   def show
-    authorize! :show, @challenge, :message => t("messages.you_are_not_authorized")
+    authorize! :show, @challenge, :message => t("messages.you_are_not_authorized"), :redirect_to => '/users/sign_in'
   end
 
   # GET /challenges/new
@@ -172,6 +175,9 @@ class ChallengesController < ApplicationController
         end
       end
     end
+
+  rescue CanCan::AccessDenied
+    redirect_to '/users/sign_in'
   end
 
   def get_hint
@@ -206,6 +212,9 @@ class ChallengesController < ApplicationController
         format.json { head :no_content }
       end
     end
+
+  rescue CanCan::AccessDenied
+    redirect_to '/users/sign_in'
   end
 
   private
