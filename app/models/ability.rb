@@ -44,7 +44,12 @@ class Ability
   def visitor
     can :read, :all
 
+    # Chapter
     cannot :show, Chapter, :showable_by_visitor => false
+    cannot :index, Chapter
+
+    # Challenge
+    cannot :show, Challenge
   end
 
   def user

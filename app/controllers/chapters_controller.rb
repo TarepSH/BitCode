@@ -5,6 +5,7 @@ class ChaptersController < ApplicationController
   # GET /chapters.json
   def index
     @chapters = Chapter.all
+    authorize! :index, @chapters, :message => t("messages.you_are_not_authorized")
   end
 
   # GET /chapters/1
