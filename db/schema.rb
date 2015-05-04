@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428113234) do
+ActiveRecord::Schema.define(version: 20150504125804) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -68,10 +68,11 @@ ActiveRecord::Schema.define(version: 20150428113234) do
     t.string   "video_content_type"
     t.datetime "video_updated_at"
     t.integer  "course_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "slug"
     t.string   "youtube_url"
+    t.boolean  "showable_by_visitor"
   end
 
   add_index "chapters", ["slug"], name: "index_chapters_on_slug"
@@ -85,9 +86,9 @@ ActiveRecord::Schema.define(version: 20150428113234) do
     t.datetime "logo_updated_at"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.string   "slug"
     t.boolean  "published",          default: false
     t.boolean  "coming_soon",        default: true
+    t.string   "slug"
     t.boolean  "is_free",            default: true
     t.string   "cover_file_name"
     t.integer  "cover_file_size"
