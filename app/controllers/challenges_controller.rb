@@ -12,7 +12,6 @@ class ChallengesController < ApplicationController
   # GET /challenges/1
   # GET /challenges/1.json
   def show
-    authorize! :show, @challenge, :message => t("messages.you_are_not_authorized")
   end
 
   # GET /challenges/new
