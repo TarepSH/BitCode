@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
   def index
     @chapter = Chapter.find(params[:chapter_id])
     @challenges = @chapter.challenges
+    authorize! :show, @chapter, :message => t("messages.you_are_not_authorize_visitor")
   end
 
   # GET /challenges/1
@@ -67,6 +68,7 @@ class ChallengesController < ApplicationController
     @challenges = @chapter.challenges
     @challenge = @challenges.find_all { |challenge| challenge.id == params[:challenge_id].to_i }.first
     @steps = @challenge.challenge_steps
+    authorize! :show, @chapter, :message => t("messages.you_are_not_authorize_visitor")
 
 
     user_code = params[:tabs].select { |tab| tab[:language_name] == "html" }[0]["starter_code"]
@@ -187,7 +189,9 @@ class ChallengesController < ApplicationController
   end
 
   def get_next_hint
+    @chapter = Chapter.where(id: params[:chapter_id].to_i)
     @hint = Hint.where('challenge_id = ? AND id > ?', params[:challenge_id].to_i, params[:hint_id].to_i).first
+    authorize! :show, @chapter, :message => t("messages.you_are_not_authorize_visitor")
 
     respond_to do |format|
       if (@hint)
