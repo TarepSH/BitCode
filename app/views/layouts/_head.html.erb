@@ -7,3 +7,11 @@
   yield(:head_tags)
 end %>
 <%= csrf_meta_tags %>
+
+<% if alert && !alert.empty? %>
+  <script>
+    $(document).ready(function (argument) {
+      showNotify("", "<%= alert %>", "error");
+    });
+  </script>
+<% end %>
