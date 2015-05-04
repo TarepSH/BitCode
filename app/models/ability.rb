@@ -49,14 +49,12 @@ class Ability
 
   def user
     visitor
-    puts "here User"
 
     can :show, Chapter
   end
 
   def admin
     user
-    puts "here Admin"
 
     can :edit, :all
     can :manage, :all
