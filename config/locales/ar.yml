@@ -46,12 +46,14 @@ ar:
   contact_us:
     email: البريد الإلكتروني
     message: نص الرسالة
+    recaptcha: كابتشا
     name: الاسم
     send: ارسل الرسالة
     sent_by_name: ارسلت من قبل %{name} (%{email})
     subject: عنوان الرسالة
     notices:
       success: تم ارسال الرسالة بنجاح
+      notsuccess: تأكد من كتابة رمز التحقق بشكل صحيح
   courses:
     coming_soon: قريباً
     latest_courses: أحدث الدورات التعليمية في بت كود

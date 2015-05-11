@@ -51,6 +51,9 @@ gem 'nokogiri'
 # ContactUs gem provid a basic contact form
 gem 'contact_us', '~> 1.0.1'
 
+# reCabtch gem provide captch for bloking spaming
+gem "recaptcha"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -45,6 +45,17 @@
           <% end %>
         </div>
         <br>
+
+
+        <div class='text required' id='contact_us_contact_recaptcha_input'>
+          <%= f.label :recaptcha_tags, (t('contact_us.recaptcha') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= recaptcha_tags %>
+          <% if f.object.errors[:recaptcha_tags].present? %>
+            <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+          <% end %>
+        </div>
+        <br>
+
         <div class='commit'>
           <%= f.submit :submit, :class => 'submit create btn btn-success', :title => t('contact_us.send'), :value => t('contact_us.send') %>
         </div>
