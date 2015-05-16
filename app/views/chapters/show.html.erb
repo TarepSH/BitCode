@@ -16,5 +16,7 @@
 </div>
 <br>
 <div class="video-challaneg text-center">
-  <button type="button" class="btn btn-primary btn-lg">إلى التحديات!</button>
+<%= button_to "إلى التحديات!", course_chapter_challenges_path(params[:course_id], params[:id]), :class => btn btn-primary btn-l", :method => :get  %>
 </div>
+<br>
+<br>
