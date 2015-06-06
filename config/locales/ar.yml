@@ -66,10 +66,34 @@ ar:
     color: لون
     font-size: حجم خط
     text-decoration: ديكور نص
+    font-family: نوع الخط
+    height: طول
+    width: عرض
+    font-family: نوع الخط
+    font-style: شكل الخط
+    background-color: لون الخلفية
+    background-repeat: تكرار الخلفية
   css_value:
     20px: 20px
     rgb(255, 0, 0): احمر
     underline: تحته خط
+    rgb(0, 128,0): أخضر
+    150px: 150px
+    rgb(0, 255, 0): اخضر
+    rgb(0, 128, 0: اخضر
+    rgb(0, 0, 255): ازرق
+    courier: courier
+    fantasy: fantasy
+    10px: 10px
+    italic: خط مائل
+    rgb(180, 180, 180: #B4B4B4
+    no-repeat: no-repeat
+    repeat-x: repeat-x
+    repeat-y: repeat-y
+    none: none
+    helvetica: helvetica
+    padding-left: الحشو من اليسار
+    7px: 7px
   errors:
     messages:
       blank: فارغ، يرجى ملء الحقل
