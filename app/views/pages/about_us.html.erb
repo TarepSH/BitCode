@@ -1,17 +1,79 @@
-<div class="container">
+<style media="screen">
+  .course-header {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),url(<%= asset_path('about-us-cover.png')%>);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:  50% 30%;
+  }
+
+  .jumbotron {
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+</style>
+
+<div class="course-header">
+  <div class="container">
+    <div class="col-sm-12">
+      <h1>عن BitCode </h1>
+      <p>  BitCode هي عبارة عن منصة إلكترونية للتعليم برمجة تطبيقات الويب بطريقة تفاعلية، حيث سيكون على المستخدم كتابة الكود بشكل مباشر على المتصفح من دون الحاجة إلى تنصيب أي أدوات أخرى على الحاسب، وكل هذا المحتوى متوفر باللغة العربية وبشكل مجاني.</p>
+
+</div>
+</div>
+</div
+
       <!-- Intro Content -->
         <div class="row">
-            <div class="col-md-6">
-                <h2>عن BitCode</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
-            </div>
+          <div class="container">
 
-            <div class="col-md-6 ">
-              <br>
-                <img class="img-responsive" src="http://bit-code.net/image.png" alt="BitCode logo" width="300">
-                <br>
+          <div class="col-md-12 col-sm-12">
+<h2 class="page-header">رؤية BitCode:</h2>
+
+            <div class="jumbotron">
+  <p>
+    التطبيق يقوم بتعليم برمجة تطبيقات الويب بطريقة تفاعلية غير مملة، ممتعة للشريحة المستهدفة، ومتوفرة باللغة العربية، وبشكل مجاني.
+  تعلم مثل هذه المهارات مهمة جداً لشريحة الشباب العربي مما يقد يوفر لهم العديد من الوظائف البرمجية في المستقبل، وخاصة ان السوق في امس الحاجة لهذه القطاعات. وبنفس الوقت تعد البرمجة والتطوير تطبيقات الويب من أكثر الأعمال سهولة للعمل عليها (كونك تحتاج إلى حاسب، وإتصال بالإنترنت فقط) وبنفس الوقت تعد من اكثر الأعمال دخلاً.
+  </p>
+  <p>
+    مثل هذ التطبيق قد يشكل البداية المهمة للشباب العربي في الإنطلاق في مهنة وعمل مهم جداً في المستقبل وهو مهمة تطوير تطبيقات الويب والبرمجة بشكل عام، هذا الأمر سيوفر العديد من الفرص العمل الحر freelancing لمثل هذه الشريحة. ويوفر لهم دخل رائع من هذه الأعمال من منازلهم، من دون الحاجة إلى السفر من اجل مثل هذه الفرص العمل، او ترك الدراسة بشكل كامل، كون مثل هذه الأمور تتم بشكل جانبي وضمن أوقات الفراغ. هنالك العديد من التجارب العربية الرائعة حول ذلك، حيث العديد من الشباب العربي الصغير يحصل على أرباح مالية جيدة تصل احياناً إلى أكثر من 300 دولار شهرياً مقابل أعمال برمجية بسيطة، لكنها تحتاج إلى بعض الوقت لعملها. وهنا تماماً ما نطمح ان نكون به، منصة إلكترونية لتعليم الشباب مهارة تطوير تطبيقات الويب، بطريفة تفاعلية باللغة العربية وبشكل مجاني، لينطلقوا في مثل هذا السوق.
+  </p>
+  </div>
+
+<h2 class="page-header">فريق العمل:</h2>
+</div>
+
+<div class="row text-center">
+<div class="col-sm-6">
+
+  <img src="<%= asset_path ("tarek.png") %>" class="img-responsive img-circle center-block" alt="">
+                      <h4>Tarek Sheikh AL-Shbab</h4>
+                      <p class="text-muted">Founder</p>
+                      <ul class="list-inline social-buttons">
+                          <li><a href="https://twitter.com/TarepSH"><i class="fa fa-twitter"></i></a>
+                          </li>
+                          <li><a href="https://www.linkedin.com/in/tarepsh"><i class="fa fa-linkedin"></i></a>
+                          </li>
+                      </ul>
+          </div>
+
+          <div class="col-sm-6">
+
+          <img src="<%= asset_path ("mohammed.png") %>" class="img-responsive img-circle center-block" alt="">
+                                <h4>Mohammed Al-Juboori</h4>
+                                <p class="text-muted">CTO</p>
+                                <ul class="list-inline social-buttons">
+                                  <li><a href="https://github.com/MhdAljuboori"><i class="fa fa-github"></i></a>
+                                  </li>
+                                    <li><a href="https://twitter.com/mhdaljuboori"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li><a href="https://www.linkedin.com/in/mohammedaljuboori"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+
+                                </ul>
+                      </div>
+                    </div>
+
             </div>
 
         </div>
