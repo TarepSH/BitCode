@@ -9,4 +9,7 @@ class PagesController < ApplicationController
 
   def about_us
   end
+
+  def restaurant_css_game
+  end
 end
