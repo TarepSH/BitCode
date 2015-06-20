@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   # get '/contact-us' => 'pages#contact_us'
   get '/about-us' => 'pages#about_us'
+  get '/restaurant_css_game' => 'pages#restaurant_css_game'
 
 
 
