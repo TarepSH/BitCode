@@ -140,6 +140,20 @@
       <%= render '/courses/course_block', course: course %>
     <% end %>
   </div>
+
+  <div class="page-header">
+     <h1>الألعاب التفاعلية </h1>
+
+     <div class="col-md-3 col-sm-4 col-xs-12" style="padding-top:40px;">
+       <%= link_to 'restaurant_css_game', class: 'text-center course-block' do %>
+         <%= image_tag "restaurant_css_game.png", width: 200 %>
+         <h3>مطعم العناصر لـ CSS</h3>
+         <p>هنا في هذه اللعبة التفاعلية، ستتعلم كل النقاط المهمة في أختيار العناصر في الـ CSS والتعديل عليها. لعبة ممتعة بإنتظارك</p>
+         <p></p>
+  <% end %>
+       </div>
+  </div>
+
   <%# if @courses.length == 4 %>
     <!-- <a href="/courses" class="pull-left btn btn-sm btn-primary btn-more">المزيد</a> -->
   <%# end %>
