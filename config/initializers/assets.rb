@@ -10,3 +10,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( angular/angular.js angular/angular.css )
+Rails.application.config.assets.precompile += %w( restaurant_css_game/style-ar.css  restaurant_css_game/restaurant-ar.js restaurant_css_game/levels-ar.js)
