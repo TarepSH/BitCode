@@ -56,6 +56,10 @@ gem 'contact_us', '~> 1.0.1'
 # reCabtch gem provide captch for bloking spaming
 gem "recaptcha"
 
+#gem for SEO and adding mate tag
+gem 'metamagic'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

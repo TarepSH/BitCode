@@ -1,7 +1,10 @@
-<title>BitCode</title>
+<% metamagic site: "BitCode", title: [:site, :title], separator: " — " %>
+<%= metamagic %>
+
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= favicon_link_tag 'favicon.ico' %>
+
 
 <%= if content_for?(:head_tags)
   yield(:head_tags)
