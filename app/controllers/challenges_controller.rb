@@ -9,13 +9,14 @@ class ChallengesController < ApplicationController
     authorize! :show, @chapter, :message => t("messages.you_are_not_authorized_visitor")
 
   rescue CanCan::AccessDenied
-    redirect_to '/users/sign_in'
+  #  redirect_to '/users/sign_in', :notice => ("you have to singin first")
   end
 
   # GET /challenges/1
   # GET /challenges/1.json
   def show
-    authorize! :show, @challenge, :message => t("messages.you_are_not_authorized"), :redirect_to => '/users/sign_in'
+    authorize! :show, @challenge, :message => t("messages.you_are_not_authorized")
+    #:redirect_to => '/users/sign_in'
   end
 
   # GET /challenges/new

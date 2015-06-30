@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
     authorize! :show, @chapter, :message => t("messages.you_are_not_authorized_visitor")
 
   rescue CanCan::AccessDenied
-    redirect_to '/users/sign_in'
+    #redirect_to '/users/sign_in', :message => "test one"
   end
 
   # GET /chapters/new
