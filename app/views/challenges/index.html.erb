@@ -1,3 +1,9 @@
+<meta name="fragment" content="!">
+<% meta title: @chapter.course.name + " - " + @chapter.title + " - " + "التحديات" %>
+<% meta description:"{{ challenge.desc }}" %>
+<% meta og: {image: @chapter.course.logo.url} %>
+<% meta twitter: {card: "summary",  site: "@BitCodeAR" }%>
+
 <% content_for :head_tags do %>
   <%= stylesheet_link_tag    'angular/angular', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'angular/angular', 'data-turbolinks-track' => true %>
