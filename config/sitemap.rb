@@ -27,9 +27,10 @@ SitemapGenerator::Sitemap.create do
 
   add '/contact-us'
   add '/about-us'
-  add '/Courses'
+  add '/courses'
   add '/chapters'
   add '/challenges'
+  add '/restaurant_css_game'
 
 
   Course.find_each do |course|
