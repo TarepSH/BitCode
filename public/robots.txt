@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow: /
 
-Sitemap: http://www.bit-code.net/sitemap.xml.gz
+Sitemap: http://www.bit-code.net/sitemap.xml
