@@ -1,28 +1,23 @@
-== README
+== BITCODE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+BitCode is an online platform that allows people to learn how to program web application and mobile apps by watching videos and writing code directly into the window provided. This exercise will teach users how to solve challenges and learn coding in Arabic.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Achievements (as business side)
+* We launched the platform in April 2015 with 2 Course, 12 Chapters, 12 Videos, and 53 Challenges.
+
+* We have more than 2,350 registered users, without any public marketing.
+
+* There were 14,000 coding solutions submitted from users.
+
+* We have more than 24,500 Sessions for BitCode with 5 minutes of average session duration of which 22% came from Egypt and 17% from Saudi Arabia.
+* More than 34,000 minutes was watched from BitCode Videos on YouTube. 
+
+
+== License
+
+[MIT]
+
+
+
+
