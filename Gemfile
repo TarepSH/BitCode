@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -53,7 +52,7 @@ gem 'friendly_id'
 gem 'nokogiri'
 
 # ContactUs gem provid a basic contact form
-gem 'contact_us', '~> 1.0.1'
+#gem 'contact_us', '~> 1.0.1' is not support in new ruby verions. 
 
 # reCabtch gem provide captch for bloking spaming
 gem "recaptcha"
