@@ -52,7 +52,7 @@ gem 'friendly_id'
 gem 'nokogiri'
 
 # ContactUs gem provid a basic contact form
-#gem 'contact_us', '~> 1.0.1' is not support in new ruby verions. 
+gem 'contact_us', '~> 1.0.1'  
 
 # reCabtch gem provide captch for bloking spaming
 gem "recaptcha"
